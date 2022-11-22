@@ -1,0 +1,116 @@
+---
+title: "Workshop Title"
+subtitle: "Center for Health Innovation, Research, Action and Learning – Bangladesh <br/> CHIRAL Bangladesh"
+editor: source
+---
+
+<!-- https://github.com/rstudio-conf-2022/teach-ds -->
+
+------------------------------------------------------------------------
+
+🗓️ August 23, 2022 \| 11:00am - 2:00pm EDT
+
+🏨 Virtual
+
+💥 **FREE** with [conference registration](https://events.linuxfoundation.org/r-medicine/register/) (\$10 to \$50)
+
+📝 To register for the workshop, follow instructions in the email "*R Workshops 2022 - How to Prepare*" you received after conference registration
+
+------------------------------------------------------------------------
+
+# Overview
+
+Statistical analysis is an essential tool for public health professionals. R is a statistical programming language that allows us to analyze data quickly and easily. R is open-source software for Windows, Mac OSX, Linux, and Unix platforms. You can use R to retrieve data from datasets, clean them, analyze and visualize them, and present them most suitably. Our LIVE course will guide you to learn R programming one step at a time.
+
+## Learning objectives
+
+By the end of the course, students should be comfortable:
+
+-   Reading data into R
+-   Recoding and manipulating data
+-   Using R add-on packages
+-   Making exploratory plots
+-   Performing basic statistical tests
+-   Understanding basic programming syntax
+-   Creating reproducible R documents
+
+## Is this course for me?
+
+If your answer to any of the following questions is "yes", then this is the right workshop for you.
+
+-   Do you make summary tables in R (data, survey data, regression models, time-to-event data, adverse event reports)?
+
+-   Do you want your workflow to be reproducible?
+
+-   Are you often frustrated with the immense amount of code required to create great-looking tables in R?
+
+The workshop is designed for those with some experience in R. It will be expected that you can perform basic data manipulation. Experience with the {tidyverse} and the `%>%` operator is a plus, but not required.
+
+## Prework
+
+Before attending the workshop please have the following installed and configured on your machine.
+
+-   Recent version of **R**
+
+-   Recent version of **RStudio**
+
+-   Most recent release of the [**gtsummary**](https://www.danieldsjoberg.com/gtsummary/) and other packages used in workshop.
+
+    ``` r
+    instll_pkgs <- 
+      c("gtsummary", "tidyverse", "labelled", "usethis", 
+        "causaldata", "fs", "skimr", "car", "emmeans")
+    install.packages(instll_pkgs)
+    ```
+
+-   Ensure you can knit R markdown documents
+
+    -   Open RStudio and create a new Rmarkdown document
+    -   Save the document and check you are able to knit it.
+
+## Sessions
+
+| Col1 | Col2 | Col3 | Col4 | Col5 | Col6 |
+|------|------|------|------|------|------|
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+
+## Zoom + Working Virtually
+
+-   Zoom link will be emailed to students
+
+-   Class sessions will be recorded and later posted
+
+-   We will have lectures as well as breakout room sessions to work on labs
+
+-   Please be aware that there is the option to use closed captioning:
+
+## Instructors
+
+#### Md. Jubayer Hossain
+
+![](images/JHossain.jpg){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Jubayer" width="200"}
+
+[Md. Jubayer Hossain]() is the Founder and Data Analyst at [CHIRAL Bangladesh](). CHIRAL Bangladesh is a non-profit organization dedicated to health research to improve lives in Bangladesh. He aspires to maximize the quality of life of the human around me by working at the intersection of education, technology, and health research. His research interests include health data science and machine learning in healthcare.
+
+<br/>
+
+#### Md. Wahidul Islam
+
+![](images/wahidul.jpg){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Wahidul" width="200"}
+
+Wahidul Islam is an undergraduate student in the Department of Microbiology at Jagannath University, Dhaka, Bangladesh. Bioinformatics, Immunology, Cell Biology, Biostatistics, Public health, and Microbiology are some of his research interests. Currently, he is working as a research assistant in Population Health Studies Division & Genomic Data Science Center at CHIRAL Bangladesh. He also leads the seminar and workshop team at CHIRAL Bangladesh.
+
+<br/>
+
+#### Muhibullah Shahjahan
+
+![](images/muhibullah.jpg){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of muhibullah" width="200"} 
+
+Muhibullah is an undergraduate student in the Department of Microbiology at Jagannath University and health data analysis, bioinformatics are some of his research interests. Currently, he is working as a research assistant at CHIRAL Bangladesh.

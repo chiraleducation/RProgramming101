@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.163">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Workshop Title</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./material.html" rel="next">
+<link href="./images/trans - gt.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<meta property="og:title" content="Workshop Title">
+<meta property="og:description" content="Center for Health Innovation, Research, Action and Learning – Bangladesh  CHIRAL Bangladesh">
+<meta property="og:site-name" content="Workshop Title">
+<meta name="twitter:title" content="Workshop Title">
+<meta name="twitter:description" content="Center for Health Innovation, Research, Action and Learning – Bangladesh  CHIRAL Bangladesh">
+<meta name="twitter:image" content="https://www.github.com/hossainlab/images/two-hex-logo.png">
+<meta name="twitter:creator" content="@hossainlab">
+<meta name="twitter:image-height" content="1080">
+<meta name="twitter:image-width" content="1920">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Workshop Title</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="./" class="sidebar-logo-link">
+      <img src="./images/trans - gt.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/hossainlab/" title="GitHub" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">Home</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./material.html" class="sidebar-item-text sidebar-link">Material</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./q-and-a.html" class="sidebar-item-text sidebar-link">Workshop Q &amp; A</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./license.html" class="sidebar-item-text sidebar-link">License</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#is-this-course-for-me" id="toc-is-this-course-for-me" class="nav-link" data-scroll-target="#is-this-course-for-me">Is this course for me?</a></li>
+  <li><a href="#prework" id="toc-prework" class="nav-link" data-scroll-target="#prework">Prework</a></li>
+  <li><a href="#sessions" id="toc-sessions" class="nav-link" data-scroll-target="#sessions">Sessions</a></li>
+  <li><a href="#zoom-working-virtually" id="toc-zoom-working-virtually" class="nav-link" data-scroll-target="#zoom-working-virtually">Zoom + Working Virtually</a></li>
+  <li><a href="#instructors" id="toc-instructors" class="nav-link" data-scroll-target="#instructors">Instructors</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/hossainlab/clinical-reporting-gtsummary-rmed/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/hossainlab/clinical-reporting-gtsummary-rmed/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Workshop Title</h1>
+<p class="subtitle lead">Center for Health Innovation, Research, Action and Learning – Bangladesh <br> CHIRAL Bangladesh</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<!-- https://github.com/rstudio-conf-2022/teach-ds -->
+<hr>
+<p>🗓️ August 23, 2022 | 11:00am - 2:00pm EDT</p>
+<p>🏨 Virtual</p>
+<p>💥 <strong>FREE</strong> with <a href="https://events.linuxfoundation.org/r-medicine/register/">conference registration</a> ($10 to $50)</p>
+<p>📝 To register for the workshop, follow instructions in the email “<em>R Workshops 2022 - How to Prepare</em>” you received after conference registration</p>
+<hr>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>Statistical analysis is an essential tool for public health professionals. R is a statistical programming language that allows us to analyze data quickly and easily. R is open-source software for Windows, Mac OSX, Linux, and Unix platforms. You can use R to retrieve data from datasets, clean them, analyze and visualize them, and present them most suitably. Our LIVE course will guide you to learn R programming one step at a time.</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of the course, students should be comfortable:</p>
+<ul>
+<li>Reading data into R</li>
+<li>Recoding and manipulating data</li>
+<li>Using R add-on packages</li>
+<li>Making exploratory plots</li>
+<li>Performing basic statistical tests</li>
+<li>Understanding basic programming syntax</li>
+<li>Creating reproducible R documents</li>
+</ul>
+</section>
+<section id="is-this-course-for-me" class="level2">
+<h2 class="anchored" data-anchor-id="is-this-course-for-me">Is this course for me?</h2>
+<p>If your answer to any of the following questions is “yes”, then this is the right workshop for you.</p>
+<ul>
+<li><p>Do you make summary tables in R (data, survey data, regression models, time-to-event data, adverse event reports)?</p></li>
+<li><p>Do you want your workflow to be reproducible?</p></li>
+<li><p>Are you often frustrated with the immense amount of code required to create great-looking tables in R?</p></li>
+</ul>
+<p>The workshop is designed for those with some experience in R. It will be expected that you can perform basic data manipulation. Experience with the {tidyverse} and the <code>%&gt;%</code> operator is a plus, but not required.</p>
+</section>
+<section id="prework" class="level2">
+<h2 class="anchored" data-anchor-id="prework">Prework</h2>
+<p>Before attending the workshop please have the following installed and configured on your machine.</p>
+<ul>
+<li><p>Recent version of <strong>R</strong></p></li>
+<li><p>Recent version of <strong>RStudio</strong></p></li>
+<li><p>Most recent release of the <a href="https://www.danieldsjoberg.com/gtsummary/"><strong>gtsummary</strong></a> and other packages used in workshop.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>instll_pkgs <span class="ot">&lt;-</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"gtsummary"</span>, <span class="st">"tidyverse"</span>, <span class="st">"labelled"</span>, <span class="st">"usethis"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"causaldata"</span>, <span class="st">"fs"</span>, <span class="st">"skimr"</span>, <span class="st">"car"</span>, <span class="st">"emmeans"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(instll_pkgs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Ensure you can knit R markdown documents</p>
+<ul>
+<li>Open RStudio and create a new Rmarkdown document</li>
+<li>Save the document and check you are able to knit it.</li>
+</ul></li>
+</ul>
+</section>
+<section id="sessions" class="level2">
+<h2 class="anchored" data-anchor-id="sessions">Sessions</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Col1</th>
+<th>Col2</th>
+<th>Col3</th>
+<th>Col4</th>
+<th>Col5</th>
+<th>Col6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="zoom-working-virtually" class="level2">
+<h2 class="anchored" data-anchor-id="zoom-working-virtually">Zoom + Working Virtually</h2>
+<ul>
+<li><p>Zoom link will be emailed to students</p></li>
+<li><p>Class sessions will be recorded and later posted</p></li>
+<li><p>We will have lectures as well as breakout room sessions to work on labs</p></li>
+<li><p>Please be aware that there is the option to use closed captioning:</p></li>
+</ul>
+</section>
+<section id="instructors" class="level2">
+<h2 class="anchored" data-anchor-id="instructors">Instructors</h2>
+<section id="md.-jubayer-hossain" class="level4">
+<h4 class="anchored" data-anchor-id="md.-jubayer-hossain">Md. Jubayer Hossain</h4>
+<p><img src="images/JHossain.jpg" class="img-fluid" style="float:right;padding: 0 0 0 10px;" alt="Headshot of Jubayer" width="200"></p>
+<p><a href="">Md. Jubayer Hossain</a> is the Founder and Data Analyst at <a href="">CHIRAL Bangladesh</a>. CHIRAL Bangladesh is a non-profit organization dedicated to health research to improve lives in Bangladesh. He aspires to maximize the quality of life of the human around me by working at the intersection of education, technology, and health research. His research interests include health data science and machine learning in healthcare.</p>
+<p><br></p>
+</section>
+<section id="md.-wahidul-islam" class="level4">
+<h4 class="anchored" data-anchor-id="md.-wahidul-islam">Md. Wahidul Islam</h4>
+<p><img src="images/wahidul.jpg" class="img-fluid" style="float:right;padding: 0 0 0 10px;" alt="Headshot of Wahidul" width="200"></p>
+<p>Wahidul Islam is an undergraduate student in the Department of Microbiology at Jagannath University, Dhaka, Bangladesh. Bioinformatics, Immunology, Cell Biology, Biostatistics, Public health, and Microbiology are some of his research interests. Currently, he is working as a research assistant in Population Health Studies Division &amp; Genomic Data Science Center at CHIRAL Bangladesh. He also leads the seminar and workshop team at CHIRAL Bangladesh.</p>
+<p><br></p>
+</section>
+<section id="muhibullah-shahjahan" class="level4">
+<h4 class="anchored" data-anchor-id="muhibullah-shahjahan">Muhibullah Shahjahan</h4>
+<p><img src="images/muhibullah.jpg" class="img-fluid" style="float:right;padding: 0 0 0 10px;" alt="Headshot of muhibullah" width="200"></p>
+<p>Muhibullah is an undergraduate student in the Department of Microbiology at Jagannath University and health data analysis, bioinformatics are some of his research interests. Currently, he is working as a research assistant at CHIRAL Bangladesh.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./material.html" class="pagination-link">
+        <span class="nav-page-text">Material</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>   
+    <div class="nav-footer-right">© Copyright 2022, Md. Jubayer Hossain</div>
+  </div>
+</footer>
+
+
+
+</body></html>
