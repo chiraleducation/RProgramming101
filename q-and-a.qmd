@@ -1,6 +1,6 @@
 ---
-title: "Q & A From Clinical Reporting with {gtsummary} Workshop"
-subtitle: "Workshop Date: 2022-08-23"
+title: "Q & A for Data Analysis with R"
+subtitle: "Workshop Date: December 2, 2022"
 editor: source
 ---
 
@@ -14,6 +14,47 @@ library(gtsummary)
 
 theme_gtsummary_compact()
 ```
+
+
+## FAQs
+
+1.  **Q:** Why is this course relevant today?
+
+Learning the skills we teach you in this workshop will put you in the 
+forefront of the Analytics movement. Not only will you learn to 
+master the technical skills required to handle critical data 
+manipulation and visualization using R, but you will also learn more 
+advanced statistical methods. You will even learn to build basic 
+predictive models. Ultimately, you will build an analytics toolkit 
+and a mindset that is 100% transferable to the job you have today, 
+and the job you deserve tomorrow.
+
+2.  **Q:** What is R?
+R is the world’s premier programming language for analytics 
+and data visualization. It is 100% free and open source with an 
+incredible user community that is constantly adding to its 
+library of free packages. The power of R is applied everyday at 
+the world’s leading companies including Google, Facebook, 
+Uber, and Microsoft.
+
+3.  **Q:** Do I need to pass an exam to finish the workshop?
+No. we’ll monitor your progress along the way and intervene if necessary. 
+You’ll end the course by completing a practical assignment that will help 
+you bring your newly developed skills into practice.
+
+4.  **Q:** Is this course the right fit for me?
+If you’re not sure this course is the right fit, please visit our 
+website and schedule a call (+8801771083855) with one of our advisors.
+
+5.  **Q:** After completion
+After completing the course, you will receive a certificate 
+which is signed by your instructor and will be sent to you by 
+post. The certificate number enables you to add your experience 
+to the education section of your LinkedIn profile.
+
+6.  **Q:** Are there any prerequisites?
+No. 
+
 
 ## Answered Questions
 
