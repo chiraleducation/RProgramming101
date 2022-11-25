@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Title</title>
+<title>Workshop Title - Data Analysis with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -124,11 +124,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</script>
 
 
-<meta property="og:title" content="Workshop Title">
-<meta property="og:description" content="Center for Health Innovation, Research, Action and Learning – Bangladesh  CHIRAL Bangladesh">
+<meta property="og:title" content="Workshop Title - Data Analysis with R">
+<meta property="og:description" content="Center for Health Innovation, Research, Action and Learning – Bangladesh">
 <meta property="og:site-name" content="Workshop Title">
-<meta name="twitter:title" content="Workshop Title">
-<meta name="twitter:description" content="Center for Health Innovation, Research, Action and Learning – Bangladesh  CHIRAL Bangladesh">
+<meta name="twitter:title" content="Workshop Title - Data Analysis with R">
+<meta name="twitter:description" content="Center for Health Innovation, Research, Action and Learning – Bangladesh">
 <meta name="twitter:image" content="https://www.github.com/hossainlab/images/two-hex-logo.png">
 <meta name="twitter:creator" content="@hossainlab">
 <meta name="twitter:image-height" content="1080">
@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Workshop Title</h1>
+      <h1 class="quarto-secondary-nav-title">Data Analysis with R</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -199,10 +199,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#what-is-r" id="toc-what-is-r" class="nav-link" data-scroll-target="#what-is-r">What is R?</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a></li>
+  <li><a href="#purpose-of-statistical-programming-software" id="toc-purpose-of-statistical-programming-software" class="nav-link" data-scroll-target="#purpose-of-statistical-programming-software">Purpose of statistical programming software</a></li>
+  <li><a href="#why-do-we-need-analytics" id="toc-why-do-we-need-analytics" class="nav-link" data-scroll-target="#why-do-we-need-analytics">Why Do We Need Analytics?</a>
+  <ul class="collapse">
+  <li><a href="#healthcare" id="toc-healthcare" class="nav-link" data-scroll-target="#healthcare">Healthcare</a></li>
+  <li><a href="#insurance" id="toc-insurance" class="nav-link" data-scroll-target="#insurance">Insurance</a></li>
+  <li><a href="#banking" id="toc-banking" class="nav-link" data-scroll-target="#banking">Banking</a></li>
+  </ul></li>
+  <li><a href="#why-r" id="toc-why-r" class="nav-link" data-scroll-target="#why-r">Why R?</a></li>
+  <li><a href="#who-uses-r" id="toc-who-uses-r" class="nav-link" data-scroll-target="#who-uses-r">Who uses R?</a></li>
+  <li><a href="#evolution-of-r" id="toc-evolution-of-r" class="nav-link" data-scroll-target="#evolution-of-r">Evolution of R</a></li>
+  <li><a href="#features-of-r" id="toc-features-of-r" class="nav-link" data-scroll-target="#features-of-r">Features of R</a></li>
+  <li><a href="#comparison-to-other-statistical-programming-software" id="toc-comparison-to-other-statistical-programming-software" class="nav-link" data-scroll-target="#comparison-to-other-statistical-programming-software">Comparison to other statistical programming software</a></li>
+  <li><a href="#useful-resources-for-learning-r" id="toc-useful-resources-for-learning-r" class="nav-link" data-scroll-target="#useful-resources-for-learning-r">Useful resources for learning R</a></li>
+  <li><a href="#course-structure-and-meetings" id="toc-course-structure-and-meetings" class="nav-link" data-scroll-target="#course-structure-and-meetings">Course Structure and meetings</a></li>
+  <li><a href="#textbook" id="toc-textbook" class="nav-link" data-scroll-target="#textbook">Textbook</a></li>
+  <li><a href="#required-software" id="toc-required-software" class="nav-link" data-scroll-target="#required-software">Required software</a></li>
+  <li><a href="#recording-of-classes" id="toc-recording-of-classes" class="nav-link" data-scroll-target="#recording-of-classes">Recording of classes</a></li>
+  <li><a href="#learning-resources" id="toc-learning-resources" class="nav-link" data-scroll-target="#learning-resources">Learning resources</a></li>
   <li><a href="#is-this-course-for-me" id="toc-is-this-course-for-me" class="nav-link" data-scroll-target="#is-this-course-for-me">Is this course for me?</a></li>
   <li><a href="#prework" id="toc-prework" class="nav-link" data-scroll-target="#prework">Prework</a></li>
-  <li><a href="#sessions" id="toc-sessions" class="nav-link" data-scroll-target="#sessions">Sessions</a></li>
   <li><a href="#zoom-working-virtually" id="toc-zoom-working-virtually" class="nav-link" data-scroll-target="#zoom-working-virtually">Zoom + Working Virtually</a></li>
   <li><a href="#instructors" id="toc-instructors" class="nav-link" data-scroll-target="#instructors">Instructors</a></li>
   </ul></li>
@@ -214,8 +232,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Workshop Title</h1>
-<p class="subtitle lead">Center for Health Innovation, Research, Action and Learning – Bangladesh <br> CHIRAL Bangladesh</p>
+<h1 class="title d-none d-lg-block">Data Analysis with R</h1>
+<p class="subtitle lead">Center for Health Innovation, Research, Action and Learning – Bangladesh</p>
 </div>
 
 
@@ -231,25 +249,183 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <!-- https://github.com/rstudio-conf-2022/teach-ds -->
 <hr>
-<p>🗓️ August 23, 2022 | 11:00am - 2:00pm EDT</p>
-<p>🏨 Virtual</p>
-<p>💥 <strong>FREE</strong> with <a href="https://events.linuxfoundation.org/r-medicine/register/">conference registration</a> ($10 to $50)</p>
-<p>📝 To register for the workshop, follow instructions in the email “<em>R Workshops 2022 - How to Prepare</em>” you received after conference registration</p>
+<p>🗓December 2 &amp; 3, 2022 | 8:00am - 12:00pm BDT</p>
+<p>🏨 Virtual Weekend Workshop</p>
+<p>💥 <strong>Register</strong> with <a href="https://forms.gle/NHSTSwgbCDdQzuxKA">Google Forms</a></p>
+<p>💥 <strong>Registration Fee</strong>: 300 BDT (for students), 500BDT (for professionals)</p>
+<p>📝 To register for the workshop, follow instructions in the email “<em>Weekend Workshops</em>” you received after registration.</p>
 <hr>
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>Statistical analysis is an essential tool for public health professionals. R is a statistical programming language that allows us to analyze data quickly and easily. R is open-source software for Windows, Mac OSX, Linux, and Unix platforms. You can use R to retrieve data from datasets, clean them, analyze and visualize them, and present them most suitably. Our LIVE course will guide you to learn R programming one step at a time.</p>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of the course, students should be comfortable:</p>
+<p>The purpose of this course is to provide a practical introduction to the programming language R for researchers in any field. We are convinced that R is a powerful tool that can ultimately make your life easier by enabling efficient solutions to your data analytical problems. Also, R is completely free. Who doesn’t like that?</p>
+<p>This course aims to facilitate the participant’s first steps in R and equip them with the tools and understanding to expand their technical know-how according to the needs of their specific research. It is neither a computer science nor a methodological course, but aimed at the practical needs of empirically working researchers.</p>
+<p>You might think of R as an overly complicated status symbol for ambitious quantitative researchers. This is not quite true anymore as R has become much more user-friendly over the last years. Think of R is your friend and helper if you are interested in doing: insightful graphs, regression analysis, QCA, quantitative text analysis, web-scraping, data visualization, systematic hand-coding of documents, formal modelling, etc.</p>
+<p>While this course is most likely to attract people with solid statistical training who usually use Stata or SPSS, it can easily be attended by a broader audience. All you really need to know is [I] the structure of a typical dataset in the social sciences (rows are observations, columns are variables) and [II] the logic of dependent and independent variables.</p>
+<p>You will learn how to use R to handle your data, describe it, analyse it (regressions), and transform it into beautiful graphs. At the end, you will have an idea of what R can do, and the resources to teach yourself more where needed.</p>
+<section id="what-is-r" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-r">What is R?</h2>
+<p>R is an open source language and environment for statistical computing, data mining, modeling, and data graphics. It provides a wide variety of statistical and graphical techniques such as linear and non-linear modeling, statistical tests, time series analysis, classification, and clustering.</p>
+<p>R is one of the most used business analytics tools. For example, Facebook uses R for behavior analysis related to status updates and profile pictures. Google uses it to analyze advertising effectiveness and economic forecasting. Twitter leverages R for data visualization and semantic clustering. In the 2016 data science salary survey conducted by O’Reilly, R was ranked second in a category of programming languages for data science.</p>
+</section>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning outcomes</h2>
+<p>By the end of the course students you shall be confident and equipped with all the knowledge required to perform analytical activities in R. Specifically,</p>
 <ul>
-<li>Reading data into R</li>
-<li>Recoding and manipulating data</li>
-<li>Using R add-on packages</li>
-<li>Making exploratory plots</li>
-<li>Performing basic statistical tests</li>
-<li>Understanding basic programming syntax</li>
-<li>Creating reproducible R documents</li>
+<li>Understand the fundamental syntax of R through readings, practice exercises, demonstrations, and writing R code.</li>
+<li>Apply critical programming language concepts such as data types, iteration, control structures, functions, and boolean operators by writing R programs and through examples</li>
+<li>Import a variety of data formats into R using RStudio</li>
+<li>Prepare or tidy datas for in preparation for analysis</li>
+<li>Query data using SQL and R</li>
+<li>Analyze a data set in R and present findings using the appropriate R packages</li>
+<li>Visualize data attributes using ggplot2 and other R packages.</li>
+</ul>
+</section>
+<section id="purpose-of-statistical-programming-software" class="level2">
+<h2 class="anchored" data-anchor-id="purpose-of-statistical-programming-software">Purpose of statistical programming software</h2>
+<p>Unlike spreadsheet applications (like Excel) or point-and-click statistical analysis software (SPSS), statistical programming software is based around a script-file where the user writes a series of commands to be performed,</p>
+<p><strong>Advantages of statistical programming software</strong></p>
+<ul>
+<li><p>Data analysis process is reproducible and transparent.</p></li>
+<li><p>Due to the open-ended nature of language-based programming, there is far more versatility and customizability in what you can do with data.</p></li>
+<li><p><em>Typically</em> statistical programming software has a much more comprehensive range of built-in analysis functions than spreadsheets etc.</p></li>
+</ul>
+</section>
+<section id="why-do-we-need-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-we-need-analytics">Why Do We Need Analytics?</h2>
+<p>Before an answer to above question, let us see some of the problems and their solutions in R in multiple domains.</p>
+<section id="healthcare" class="level3">
+<h3 class="anchored" data-anchor-id="healthcare">Healthcare</h3>
+<ul>
+<li><p><strong>Problem:</strong> Every year millions of people are admitted in hospital and billions are spent annually just in the admission process.</p></li>
+<li><p><strong>Solution:</strong> Given the patient history and medical history, a predictive model can be built to identify who is at risk for hospitalization and to what extent the medical equipment should be scaled.</p></li>
+</ul>
+</section>
+<section id="insurance" class="level3">
+<h3 class="anchored" data-anchor-id="insurance">Insurance</h3>
+<ul>
+<li><p><strong>Problem:</strong> Insurance extensively depends on forecasting. It is difficult to decide which policy to accept orreject.</p></li>
+<li><p><strong>Solution:</strong> By using the continuous credit report as input, we can create a model in R that will not only assess risk appetite but also make a predictive forecast as well.</p></li>
+</ul>
+</section>
+<section id="banking" class="level3">
+<h3 class="anchored" data-anchor-id="banking">Banking</h3>
+<ul>
+<li><p><strong>Problem:</strong> Large amount of customer data is generated every day in Banks. While dealing with millions of customers on regular basis, it becomes hard to track their mortgages.</p></li>
+<li><p><strong>Solution:</strong> R builds a custom model that maintains the loans provided to every individual customer which helps us to decide the amount to be paid by the customer over time.</p></li>
+</ul>
+</section>
+</section>
+<section id="why-r" class="level2">
+<h2 class="anchored" data-anchor-id="why-r">Why R?</h2>
+<ul>
+<li>R is a programming and statistical language.</li>
+<li>R is used for data Analysis and Visualization.</li>
+<li>R is simple and easy to learn, read and write.</li>
+<li>R is an example of a FLOSS (Free Libre and Open Source Software) where one can freely distribute copies of this software, read its source code, modify it, etc.</li>
+</ul>
+</section>
+<section id="who-uses-r" class="level2">
+<h2 class="anchored" data-anchor-id="who-uses-r">Who uses R?</h2>
+<ul>
+<li>The Consumer Financial Protection Bureau uses R for data analysis</li>
+<li>Statisticians at John Deere use R for time series modeling and geospatial analysis in a reliable and reproducible way.</li>
+<li>Bank of America uses R for reporting.</li>
+<li>R is part of technology stack behind Foursquare’s famed recommendation engine.</li>
+<li>ANZ, the fourth largest bank in Australia, using R for credit risk analysis.</li>
+<li>Google uses R to predict Economic Activity.</li>
+<li>Mozilla, the foundation responsible for the Firefox web browser, uses R to visualize Web activity</li>
+</ul>
+</section>
+<section id="evolution-of-r" class="level2">
+<h2 class="anchored" data-anchor-id="evolution-of-r">Evolution of R</h2>
+<ul>
+<li>R is an implementation of S programming language which was created by John Chambers at Bell Labs.</li>
+<li>R was initially written by Ross Ihaka and Robert Gentleman at the Department of Statistics of the University of Auckland in Auckland, New Zealand.</li>
+<li>R made its first public appearance in 1993.</li>
+<li>A large group of individuals has contributed to R by sending code and bug reports.Since mid-1997 there has been a core group (the “R Core Team”) who can modify the R source code archive.</li>
+<li>In the year 2000 R 1.0.0 released.</li>
+<li>R 3.0.0 was released in 2013.</li>
+</ul>
+</section>
+<section id="features-of-r" class="level2">
+<h2 class="anchored" data-anchor-id="features-of-r">Features of R</h2>
+<ul>
+<li>R supports procedural programming with functions and object-oriented programming with generic functions. Procedural programming includes procedure, records, modules, and procedure calls. While object-oriented programming languageincludes class, objects, and functions.</li>
+<li>Packages are part of R programming. Hence, they are useful in collecting sets of R functions into a single unit.</li>
+<li>R is a well-developed, simple and effective programming language which includes conditionals, loops, user defined recursive functions and input and output facilities.</li>
+<li>R has an effective data handling and storage facility,</li>
+<li>R provides a suite of operators for calculations on arrays, lists, vectors and matrices.</li>
+<li>R provides a large, coherent and integrated collection of tools for data analysis. It provides graphical facilities for data analysis and display either directly at the computer or printing at the papers.</li>
+<li>Rs programming features include database input, exporting data, viewing data, variable labels, missing data, etc.</li>
+<li>R is an interpreted language. So we can access it through command line interpreter.</li>
+<li>R supports matrix arithmetic.</li>
+<li>R, SAS, and SPSS are three statistical languages. Of these three statistical languages, R is the only an open source.</li>
+</ul>
+</section>
+<section id="comparison-to-other-statistical-programming-software" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-to-other-statistical-programming-software">Comparison to other statistical programming software</h2>
+<ul>
+<li><p><strong>Stata</strong>: The traditional choice of (academic) economists.</p>
+<ul>
+<li>Stata is more specifically econometrics focused and is much more command-oriented. Easier to use for standard applications, but if there’s not a Stata command for what you want to do, it’s harder to write something yourself.<br>
+</li>
+<li>Stata is also very different than R in that you can only ever work with one dataset at a time, while in R, it’s typical to have a number of data objects in the environment.</li>
+</ul></li>
+<li><p><strong>SAS</strong>: Similar to Stata, but more commonly used in business &amp; the private sector, in part because it’s typically more convenient for massive datasets. Otherwise, I think it’s seen as a bit older and less user-friendly.</p></li>
+<li><p><strong>Python</strong>: Another option based more on programming from scratch and with less prewritten commands. Python isn’t specific to math &amp; statistics, but instead is a general programming language used across a range of fields.<br>
+Probably the most similar software choice to R at this point, with better general use (and programming ease) at the cost of less package development specific to econometrics/data analysis.</p></li>
+<li><p><strong>Matlab</strong>: Popular in macroeconomics and theory work, not so much in empirical work. Matlab is powerful, but is much more based on programming “from scratch” using matrices and mathematical expressions.</p></li>
+</ul>
+</section>
+<section id="useful-resources-for-learning-r" class="level2">
+<h2 class="anchored" data-anchor-id="useful-resources-for-learning-r">Useful resources for learning R</h2>
+<ul>
+<li><p><strong>DataCamp:</strong> interactive online lessons in R.</p>
+<ul>
+<li>Some of the courses are free (particularly community-written lessons like the one you’ll do today), but for paid courses, DataCamp costs about 300 SEK / mo.</li>
+</ul></li>
+<li><p><strong>RStudio Cheat Sheets:</strong> Very helpful 1-2 page overviews of common tasks and packages in R.</p></li>
+<li><p><strong>Quick-R:</strong> Website with short example-driven overviews of R functionality.</p></li>
+<li><p><strong>StackOverflow:</strong> Part of the Stack Exchange network, StackOverflow is a Q&amp;A community website for people who work in programming. Tons of incredibly good R users and developers interact on StackExchange, so it’s a great place to search for answers to your questions.</p></li>
+<li><p><strong>R-Bloggers:</strong> Blog aggregagator for posts about R. Great place to learn really cool things you can do in R.</p></li>
+<li><p><strong>R for Data Science:</strong> Online version of the book by Hadley Wickham, who has written many of the best packages for R, including the Tidyverse, which we will cover.</p></li>
+</ul>
+</section>
+<section id="course-structure-and-meetings" class="level2">
+<h2 class="anchored" data-anchor-id="course-structure-and-meetings">Course Structure and meetings</h2>
+<ul>
+<li>This course is structured as a 6 week experience.</li>
+<li>This is an 1/2 online and 1/2 face-to-face course.</li>
+<li>Each week is marked as an F2F or online week.</li>
+<li>In person classes will take place on Tuesdays from 10:30am-11:50am</li>
+<li>The online “lessons” allow you to work at your own pace through the assigned lessons that includes a video lecture, tutorial, demonstration, exercise and assignment.</li>
+</ul>
+</section>
+<section id="textbook" class="level2">
+<h2 class="anchored" data-anchor-id="textbook">Textbook</h2>
+<ul>
+<li><p>Wickham, H. &amp; Grolemund, G. (2018). for Data Science. O’Reilly: New York. Available for free at http://r4ds.had.co.nz (FREE)</p></li>
+<li><p>Sosulski, K. (2018). R Fundamentals. Bookdown: New York. Available at: http://becomingvisual.com/rfundamentals (FREE)</p></li>
+</ul>
+</section>
+<section id="required-software" class="level2">
+<h2 class="anchored" data-anchor-id="required-software">Required software</h2>
+<ul>
+<li>R: http://www.r-project.org/ (FREE)</li>
+<li>RStudio (additional libraries required): http://www.rstudio.com/ (FREE)</li>
+</ul>
+</section>
+<section id="recording-of-classes" class="level2">
+<h2 class="anchored" data-anchor-id="recording-of-classes">Recording of classes</h2>
+<p>Class lectures will be recorded automatically using cloud. The links will be posted to CHIRAL Classes when they are available.</p>
+</section>
+<section id="learning-resources" class="level2">
+<h2 class="anchored" data-anchor-id="learning-resources">Learning resources</h2>
+<ul>
+<li>R Project: http://www.r-project.org/</li>
+<li>RStudio (additional libraries required): http://www.rstudio.com</li>
+<li>Quick-R http://www.statmethods.net/</li>
+<li>Google’s R Style Guide:http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml</li>
 </ul>
 </section>
 <section id="is-this-course-for-me" class="level2">
@@ -279,87 +455,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Save the document and check you are able to knit it.</li>
 </ul></li>
 </ul>
-</section>
-<section id="sessions" class="level2">
-<h2 class="anchored" data-anchor-id="sessions">Sessions</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Col1</th>
-<th>Col2</th>
-<th>Col3</th>
-<th>Col4</th>
-<th>Col5</th>
-<th>Col6</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 </section>
 <section id="zoom-working-virtually" class="level2">
 <h2 class="anchored" data-anchor-id="zoom-working-virtually">Zoom + Working Virtually</h2>
