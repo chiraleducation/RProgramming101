@@ -7,8 +7,8 @@ project:
     
 website:
   page-navigation: true
-  title: "Workshop Title"
-  description: "Homepage for  Workshop"
+  title: "Data Analysis with R"
+  description: "Homepage for  Data Analysis with R"
   site-url: "https://www.github.com/hossainlab"
   favicon: "images/trans - gt.png"
   
@@ -27,7 +27,7 @@ website:
 
   sidebar:
     background: "#708090"
-    logo: "images/trans - gt.png"
+    logo: "images/Rlogo.png"
     pinned: true
     align: center
     tools:
@@ -40,6 +40,7 @@ website:
      - href: index.qmd
        text: Home
      - href: material.qmd
+     - href: sessions.qmd
      - href: q-and-a.qmd
        text: Workshop Q & A
      - href: license.qmd

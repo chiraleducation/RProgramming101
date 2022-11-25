@@ -194,5 +194,12 @@
     "title": "Data Analysis with R",
     "section": "Learning resources",
     "text": "Learning resources\n\nR Project: http://www.r-project.org/\nRStudio (additional libraries required): http://www.rstudio.com\nQuick-R http://www.statmethods.net/\nGoogle’s R Style Guide:http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml"
+  },
+  {
+    "objectID": "sessions.html",
+    "href": "sessions.html",
+    "title": "Sessions",
+    "section": "",
+    "text": "View slides in Google Sheet"
   }
 ]
