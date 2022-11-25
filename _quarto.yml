@@ -3,14 +3,15 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
+    - "*.Rmd"
     - "!exercises/exercises.Rmd"
     - "!slides/[0-9]*.qmd"
-    
+
 website:
   page-navigation: true
   title: "Data Analysis with R"
   description: "Homepage for  Data Analysis with R"
-  site-url: "https://www.github.com/hossainlab"
+  site-url: "https://chiraltraining.github.io/WW01_DataAnalysiswithR/"
   favicon: "images/trans - gt.png"
   
   repo-url: https://github.com/hossainlab/clinical-reporting-gtsummary-rmed
