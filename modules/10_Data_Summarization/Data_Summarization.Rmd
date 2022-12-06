@@ -490,7 +490,7 @@ boxplot(formula = hp ~ cyl)
 
 ## Lab Part 3
 
-🏠 [Class Website](https://jhudatascience.org/intro_to_r/)
+🏠 [Class Website](https://chiraltraining.github.io/WW01_DataAnalysiswithR/)
 
-💻 [Lab](https://jhudatascience.org/intro_to_r/modules/Data_Summarization/lab/Data_Summarization_Lab.Rmd)
+💻 [Lab](https://chiraltraining.github.io/WW01_DataAnalysiswithR/)
 

@@ -308,8 +308,8 @@ mort %>%
 
 ## Website
 
-🏠 [Class Website](https://jhudatascience.org/intro_to_r/)  
+🏠 [Class Website](https://chiraltraining.github.io/WW01_DataAnalysiswithR/)  
 
-💻 [Lab](https://jhudatascience.org/intro_to_r/modules/Functions/lab/Functions_Lab.Rmd)
+💻 [Lab](https://chiraltraining.github.io/WW01_DataAnalysiswithR/)
 
 The end!

@@ -129,8 +129,8 @@ knitr::include_graphics("images/titles.gif")
 
 ## Lab
 
-🏠 [Class Website](https://jhudatascience.org/intro_to_r/)
+🏠 [Class Website](https://chiraltraining.github.io/WW01_DataAnalysiswithR/)
 
-💻 [Lab](https://jhudatascience.org/intro_to_r/modules/Esquisse_Data_Visualization/lab/Esquisse_Data_Visualization_Lab.Rmd)
+💻 [Lab](https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/Esquisse_Data_Visualization/lab/Esquisse_Data_Visualization_Lab.Rmd)
 
 # The end!
