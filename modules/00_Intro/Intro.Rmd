@@ -1,9 +1,15 @@
 ---
-title: ""
+title: "Introduction - Data Analysis with R"
+author: "Jubayer Hossain, [Founder & Instructor, CHIRAL Bangladesh](https://chiralbd.org/)"
+institute: "Founder, CHIRAL Bangladesh"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  ioslides_presentation:
-    css: ../../docs/styles.css
-    widescreen: yes
+  html_document:
+    toc: true
+    #number_sections: true
+    toc_depth: 6
+    toc_float: true 
+    theme: flatly
 --- 
 
 ```{r, echo = FALSE}
@@ -407,8 +413,8 @@ Check out Candace's courses:
 - Class **surveys** are available on CoursePlus so you can provide feedback!
 - Lots of **resources** can be found on the website.
 
-🏠 [Class Website](https://jhudatascience.org/intro_to_r/)
+🏠 [Class Website](https://chiraltraining.github.io/WW01_DataAnalysiswithR/)
 
 ## Website tour!
 
-🏠 [Class Website](https://jhudatascience.org/intro_to_r/)
+🏠 [Class Website](https://chiraltraining.github.io/WW01_DataAnalysiswithR/)

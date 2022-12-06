@@ -4,8 +4,8 @@ project:
   render:
     - "*.qmd"
     #- "*.Rmd"
-    - "!exercises/exercises.Rmd"
-    - "!slides/[0-9]*.qmd"
+    #- "!exercises/exercises.Rmd"
+    #- "!slides/[0-9]*.qmd"
 
 website:
   page-navigation: true

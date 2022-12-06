@@ -3,36 +3,11 @@ title: "Material"
 editor: source
 ---
 
-| **Module** | **Slides** |**Code**  | **Labs** | **Cheatsheets/Giide**|
+| **Module** | **Code** |**Labs/Exercises**  | **HW** | **Cheatsheets/Giide**|
 |------------|------------|----------|--------------|-------------------|
+|[01_Introduction](/modules/Intro.html)|[Topic]()|[qmd]()|  [Lab01]()|[Cheatsheet01]()| 
+|[02_Topic]()|[Topic]()|[qmd]()|  [Lab01]()|[Cheatsheet01]()| 
 |[Topic]()|[Topic]()|[qmd]()|  [Lab01]()|[Cheatsheet01]()| 
 
 
-## Slides
 
-[View slides in full screen](/slides/index.html)
-
-````{=html}
-<!--
-```{=html}
-<iframe class="slide-deck" src="/slides/" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
-```
--->
-````
-
-## Recording
-
-The recording of this workshop will be available after the session completed.
-
-```{=html}
-<!--
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p-diyV2E77o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
--->
-```
-## Exercises
-
-1.  Download zip file with exercises with [this link](https://github.com/hossainlab/).
-
-2.  Extract the zip file locally and open in an RStudio project.
-
-Solutions available [here](/exercises/solutions.html).

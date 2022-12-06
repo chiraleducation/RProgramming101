@@ -4,14 +4,14 @@
     "href": "material.html",
     "title": "Material",
     "section": "",
-    "text": "Module\nSlides\nCode\nLabs\nCheatsheets/Giide\n\n\n\n\nTopic\nTopic\nqmd\nLab01\nCheatsheet01"
+    "text": "Module\nCode\nLabs/Exercises\nHW\nCheatsheets/Giide\n\n\n\n\n01_Introduction\nTopic\nqmd\nLab01\nCheatsheet01\n\n\n02_Topic\nTopic\nqmd\nLab01\nCheatsheet01\n\n\nTopic\nTopic\nqmd\nLab01\nCheatsheet01"
   },
   {
     "objectID": "material.html#slides",
     "href": "material.html#slides",
     "title": "Material",
     "section": "Slides",
-    "text": "Slides\nView slides in full screen"
+    "text": "Slides\nView slides in full screen\n`{=html}"
   },
   {
     "objectID": "material.html#recording",
@@ -201,5 +201,12 @@
     "title": "Quarto HTML Basics",
     "section": "LaTeX Math",
     "text": "LaTeX Math\nYou can also include LaTeX math:\n\nP\\left(A=2\\middle|\\frac{A^2}{B}>4\\right)"
+  },
+  {
+    "objectID": "sessions.html",
+    "href": "sessions.html",
+    "title": "Sessions",
+    "section": "",
+    "text": "View slides in Google Sheet"
   }
 ]
