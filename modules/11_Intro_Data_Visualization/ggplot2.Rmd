@@ -44,7 +44,6 @@ ggplot(pulse_data, aes(x=BMICat, y=Age, fill=Gender)) + # fill=name allow to aut
 ```
 
 
-
 ## Density
 
 ## Histogram
