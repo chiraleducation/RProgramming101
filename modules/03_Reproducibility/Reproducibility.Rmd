@@ -193,5 +193,5 @@ To help make your work more reproducible:
 - Tell your future self and others what you did!
 - Print session info!
 
-🏠 [Class Website](https://jhudatascience.org/intro_to_r/)
+🏠 [Class Website](https://chiraltraining.github.io/WW01_DataAnalysiswithR/)
 

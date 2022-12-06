@@ -5,29 +5,29 @@ editor: source
 
 | **Module** | **Code** |**Labs/Exercises**  | **HW** | **Cheatsheets/Giide**|
 |------------|------------|----------|--------------|-------------------|
-|[00_Introduction](/modules/Intro.html)|[Topic](/modules/Intro.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-1.pdf)| 
+|[00_Introduction](/modules/Intro.html)|[Topic](/modules/Intro.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-1.pdf)| 
 
-|[01_Setup](/modules/R_and_RStudio_installation.html)|[Topic](/modules/R_and_RStudio_installation.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-1.pdf)| 
+|[01_Setup](/modules/R_and_RStudio_installation.html)|[Topic](/modules/R_and_RStudio_installation.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-1.pdf)| 
 
-|[02_RStudio](/modules/RStudio.html)|[Topic](/modules/RStudio.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-1.pdf)| 
+|[02_RStudio](/modules/RStudio.html)|[Topic](/modules/RStudio.Rmd)|[qmd](/modules/02_RStudio/lab)|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-1.pdf)| 
 
-|[03_Reproducibility](/modules/Reproducibility.html)|[Topic](/modules/Reproducibility.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-1.pdf)| 
+|[03_Reproducibility](/modules/Reproducibility.html)|[Topic](/modules/Reproducibility.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-1.pdf)| 
 
-|[04_Basic_R](/modules/Basic_R.html)|[Topic](/modules/Basic_R.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-2.pdf)| 
+|[04_Basic_R](/modules/Basic_R.html)|[Topic](/modules/Basic_R.Rmd)|[qmd](/modules/04_Basic_R/lab)|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-2.pdf)| 
 
-|[05_Data_Structures](/modules/Data_Classes.html)|[Topic](/modules/Data_Classes.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-3.pdf)| 
+|[05_Data_Structures](/modules/Data_Classes.html)|[Topic](/modules/Data_Classes.Rmd)|[qmd](/modules/05_Data_Structures/lab)|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-3.pdf)| 
 
-|[06_Intermediate_R](/modules/Functions/Functions.html)|[Topic](/modules/Functions/Functions/Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-9.pdf)| 
+|[06_Intermediate_R](/modules/Functions/Functions.html)|[Topic](/modules/Functions/Functions/Rmd)|[qmd](/modules/06_Intermediate_R/Functions/lab)|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-9.pdf)| 
 
-|[07_Data_IO](/modules/Data_IO.html)|[Topic](/modules/Data_IO.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-5.pdf)| 
+|[07_Data_IO](/modules/Data_IO.html)|[Topic](/modules/Data_IO.Rmd)|[qmd](/modules/07_Data_IO/lab)|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-5.pdf)| 
 
-|[08_Manipulating_Data_in_R](/modules/Manipulating_Data_in_R.html)|[Topic](/modules/Manipulating_Data_in_R.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-6.pdf)| 
+|[08_Manipulating_Data_in_R](/modules/Manipulating_Data_in_R.html)|[Topic](/modules/Manipulating_Data_in_R.Rmd)|[qmd](/modules/08_Manipulating_Data_in_R/lab)|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-6.pdf)| 
 
-|[09_Data_Cleaning](/modules/Data_Cleaning.html)|[Topic](/modules/Data_Cleaning.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-5.pdf)| 
+|[09_Data_Cleaning](/modules/Data_Cleaning.html)|[Topic](/modules/Data_Cleaning.Rmd)|[qmd](/modules/09_Data_Cleaning/lab)|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-5.pdf)| 
 
-|[10_Data_Summarization](/modules/Data_Summarization.html)|[Topic](/modules/Data_Summarization.Rmd)|[qmd]()|  [Lab01](modules/HW/homework2.html)|[Cheatsheet01](modules/cheatsheets/Day-8.pdf)| 
+|[10_Data_Summarization](/modules/Data_Summarization.html)|[Topic](/modules/Data_Summarization.Rmd)|[qmd](/modules/10_Data_Summarization/lab)|  [Lab01](/modules/HW/homework2.html)|[Cheatsheet01](/modules/cheatsheets/Day-8.pdf)| 
 
-|[11_Intro_Data_Visualization](/modules/ggplot2.html)|[Topic](/modules/ggplot2.Rmd)|[qmd]()|  [Lab01]()|[Cheatsheet01](modules/cheatsheets/Day-7.pdf)| 
+|[11_Intro_Data_Visualization](/modules/ggplot2.html)|[Topic](/modules/ggplot2.Rmd)|[qmd](/modules/11_Intro_Data_Visualization/lab)|  [Lab01]()|[Cheatsheet01](/modules/cheatsheets/Day-7.pdf)| 
 
-|[12_Descriptive_Statistics](/modules/Statistics.html)|[Topic](/modules/Statistics.Rmd)|[qmd]()|  [Lab01](modules/HW/homework3.html)|[Cheatsheet01]()| 
+|[12_Descriptive_Statistics](/modules/Statistics.html)|[Topic](/modules/Statistics.Rmd)|[qmd](/modules/12_Descriptive_Statistics/lab)|  [Lab01](/modules/HW/homework3.html)|[Cheatsheet01]()| 
 
