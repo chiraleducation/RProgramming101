@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/material.html</loc>
-    <lastmod>2022-12-06T18:45:50.298Z</lastmod>
+    <lastmod>2022-12-28T16:51:45.966Z</lastmod>
   </url>
   <url>
     <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/index.html</loc>
-    <lastmod>2022-12-06T18:44:57.262Z</lastmod>
+    <lastmod>2022-12-28T16:44:29.914Z</lastmod>
   </url>
   <url>
     <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/00_Intro/Intro.html</loc>
-    <lastmod>2022-12-06T11:14:25.847Z</lastmod>
+    <lastmod>2022-12-28T16:39:30.260Z</lastmod>
   </url>
   <url>
     <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/sessions.html</loc>
@@ -23,5 +23,21 @@
   <url>
     <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/q-and-a.html</loc>
     <lastmod>2022-12-06T18:45:33.943Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/04_Basic_R/Basic_R.html</loc>
+    <lastmod>2022-12-28T16:51:42.570Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/01_Setup/R_and_RStudio_installation.html</loc>
+    <lastmod>2022-12-28T16:40:58.735Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/02_RStudio/RStudio.html</loc>
+    <lastmod>2022-12-28T16:42:20.570Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/03_Reproducibility/Reproducibility.html</loc>
+    <lastmod>2022-12-28T16:44:18.119Z</lastmod>
   </url>
 </urlset>

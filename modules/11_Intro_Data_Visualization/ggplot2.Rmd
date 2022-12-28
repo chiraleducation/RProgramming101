@@ -23,7 +23,7 @@ library(tidyverse)
 
 
 # Dataset and Data Exploration 
-```{r}
+```{r data}
 pulse_data <- read.csv("data/pulse_data.csv")
 ```
 
