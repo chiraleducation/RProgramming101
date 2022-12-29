@@ -19,7 +19,6 @@ opts_chunk$set(comment = "")
 ```
 
 
-
 ## Outline 
 
 * Part 0: A little bit of set up!
@@ -82,9 +81,8 @@ knitr::include_graphics("images/Data_IO_new_desktop.png")
 
 ## Data We Use
 
-* Everything we do in class will be using real publicly available data - there are few 'toy' example datasets and 'simulated' data
-* Baltimore Open Data and Data.gov will be sources for the first few days
-* We have also added functionality to load these datasets directly in the `jhur` package
+* Everything we do in class will be using real publicly available data 
+* Open Data and Data.gov will be sources for the first few days
 
 
 ## Data Input
@@ -108,11 +106,11 @@ Youth Tobacco Survey (YTS) dataset:
 
 ## Data Input: Dataset Location
 
-Dataset is located at http://jhudatascience.org/intro_to_r/data/Youth_Tobacco_Survey_YTS_Data.csv
+Dataset is located at [https://github.com/chiraltraining/WW01_DataAnalysiswithR/blob/main/modules/07_Data_IO/YouthTobacco_newNames.csv](https://github.com/chiraltraining/WW01_DataAnalysiswithR/blob/main/modules/07_Data_IO/YouthTobacco_newNames.csv)
 
 * Download data by clicking the above link
     
-    * Safari - if a file loads in your browser, choose File --> Save As, select, Format "Page Source" and save
+    * Google Chrome - if a file loads in your browser, choose File --> Save As, select, Format "Page Source" and save
 
 
 ## Data Input: Read in Directly 
@@ -120,7 +118,7 @@ Dataset is located at http://jhudatascience.org/intro_to_r/data/Youth_Tobacco_Su
 ```{r read_url, message = FALSE}
 # load library `readr` that contains function `read_csv`
 library(readr)
-dat <- read_csv(file = "http://jhudatascience.org/intro_to_r/data/Youth_Tobacco_Survey_YTS_Data.csv")
+dat <- read_csv("data/Youth_Tobacco_Survey_YTS_Data.csv")
 
 # `head` displays first few rows of a data frame
 head(dat, n = 5)
@@ -158,7 +156,7 @@ read_csv(file, col_names = TRUE, col_types = NULL,
 ```{r, eval = FALSE}
 ## Examples
 
-dat <- read_csv(file = "/Users/avahoffman/Downloads/Youth_Tobacco_Survey_YTS_Data.csv")
+dat <- read_csv(file = "F:/VirtualWeekendWorkshops/VWW01_DataAnalysiswithR/modules/07_Data_IO/data")
 
 dat <- read_csv(file = "Youth_Tobacco_Survey_YTS_Data.csv")
 
@@ -371,7 +369,7 @@ read_dta(file = "mtcars.dta")
 
 ## Lab Part 1
 
-💻 [Data I/O Lab](https://jhudatascience.org/intro_to_r/modules/Data_IO/lab/Data_IO_Lab.Rmd)
+💻 [Data I/O Lab]()
 
 
 ## Working Directories

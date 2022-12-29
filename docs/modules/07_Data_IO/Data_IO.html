@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jubayer Hossain">
-<meta name="dcterms.date" content="2022-12-28">
+<meta name="dcterms.date" content="2022-12-29">
 
 <title>Data Analysis with R - Data Input/Output</title>
 <style>
@@ -272,7 +272,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 28, 2022</p>
+      <p class="date">December 29, 2022</p>
     </div>
   </div>
   
@@ -346,9 +346,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="data-we-use" class="level2">
 <h2 class="anchored" data-anchor-id="data-we-use">Data We Use</h2>
 <ul>
-<li>Everything we do in class will be using real publicly available data - there are few ‘toy’ example datasets and ‘simulated’ data</li>
-<li>Baltimore Open Data and Data.gov will be sources for the first few days</li>
-<li>We have also added functionality to load these datasets directly in the <code>jhur</code> package</li>
+<li>Everything we do in class will be using real publicly available data</li>
+<li>Open Data and Data.gov will be sources for the first few days</li>
 </ul>
 </section>
 <section id="data-input" class="level2">
@@ -374,11 +373,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="data-input-dataset-location" class="level2">
 <h2 class="anchored" data-anchor-id="data-input-dataset-location">Data Input: Dataset Location</h2>
-<p>Dataset is located at http://jhudatascience.org/intro_to_r/data/Youth_Tobacco_Survey_YTS_Data.csv</p>
+<p>Dataset is located at <a href="https://github.com/chiraltraining/WW01_DataAnalysiswithR/blob/main/modules/07_Data_IO/YouthTobacco_newNames.csv">https://github.com/chiraltraining/WW01_DataAnalysiswithR/blob/main/modules/07_Data_IO/YouthTobacco_newNames.csv</a></p>
 <ul>
 <li><p>Download data by clicking the above link</p>
 <ul>
-<li>Safari - if a file loads in your browser, choose File –&gt; Save As, select, Format “Page Source” and save</li>
+<li>Google Chrome - if a file loads in your browser, choose File –&gt; Save As, select, Format “Page Source” and save</li>
 </ul></li>
 </ul>
 </section>
@@ -387,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load library `readr` that contains function `read_csv`</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"http://jhudatascience.org/intro_to_r/data/Youth_Tobacco_Survey_YTS_Data.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/Youth_Tobacco_Survey_YTS_Data.csv"</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># `head` displays first few rows of a data frame</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -436,7 +435,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Examples</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"/Users/avahoffman/Downloads/Youth_Tobacco_Survey_YTS_Data.csv"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"F:/VirtualWeekendWorkshops/VWW01_DataAnalysiswithR/modules/07_Data_IO/data"</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"Youth_Tobacco_Survey_YTS_Data.csv"</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
@@ -707,7 +706,7 @@ dbl  (7): YEAR, Data_Value, Data_Value_Std_Err, Low_Confidence_Limit, High_C...
 </section>
 <section id="lab-part-1" class="level2">
 <h2 class="anchored" data-anchor-id="lab-part-1">Lab Part 1</h2>
-<p>💻 <a href="https://jhudatascience.org/intro_to_r/modules/Data_IO/lab/Data_IO_Lab.Rmd">Data I/O Lab</a></p>
+<p>💻 <a href="">Data I/O Lab</a></p>
 </section>
 <section id="working-directories" class="level2">
 <h2 class="anchored" data-anchor-id="working-directories">Working Directories</h2>

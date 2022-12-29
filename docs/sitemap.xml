@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/material.html</loc>
-    <lastmod>2022-12-28T17:40:08.643Z</lastmod>
+    <lastmod>2022-12-29T09:32:04.533Z</lastmod>
   </url>
   <url>
     <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/index.html</loc>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/07_Data_IO/Data_IO.html</loc>
-    <lastmod>2022-12-28T17:25:21.228Z</lastmod>
+    <lastmod>2022-12-29T09:32:43.859Z</lastmod>
   </url>
   <url>
     <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/08_Manipulating_Data_in_R/Manipulating_Data_in_R.html</loc>
@@ -71,5 +71,25 @@
   <url>
     <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/12_Descriptive_Statistics/Statistics.html</loc>
     <lastmod>2022-12-28T17:37:55.814Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/09_Data_Summarization/Data_Summarization.html</loc>
+    <lastmod>2022-12-29T09:32:13.185Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/10_Data_Cleaning/Data_Cleaning.html</loc>
+    <lastmod>2022-12-29T09:32:23.785Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/11_Manipulating_Data_in_R/Manipulating_Data_in_R.html</loc>
+    <lastmod>2022-12-29T09:32:30.870Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/12_Data_Visualization/Intro_Data_Visualization/esquisse.html</loc>
+    <lastmod>2022-12-29T09:32:34.582Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chiraltraining.github.io/WW01_DataAnalysiswithR/modules/13_Descriptive_Statistics/Statistics.html</loc>
+    <lastmod>2022-12-29T09:32:41.471Z</lastmod>
   </url>
 </urlset>
