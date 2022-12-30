@@ -30,7 +30,6 @@ library(tidyverse)
     -   combine with `summarize()` to get statistics per group
 -   `plot()` and `hist()` are great for a **quick snapshot** of the data
 
-📃[Cheatsheet](https://jhudatascience.org/intro_to_r/modules/cheatsheets/Day-4.pdf)
 
 ## Recap on data classes
 
@@ -44,10 +43,9 @@ library(tidyverse)
 -   matrix has columns and rows but is all one data class
 -   lists can contain multiples of any other class of data including
     lists!
--   The `lubridate` package is helpful for dates and times\
-    📃[Cheatsheet](https://jhudatascience.org/intro_to_r/modules/cheatsheets/Day-4.pdf)
+-   The `lubridate` package is helpful for dates and times
 
-## Data Cleaning {.emphasized}
+## Data Cleaning 
 
 In general, data cleaning is a process of investigating your data for
 inaccuracies, or recoding it in a way that makes it more manageable.
@@ -70,7 +68,7 @@ Types of "missing" data:
 -   `Inf` and `-Inf` - Infinity, happens when you divide a positive
     number (or negative number) by 0.
 
-## Finding Missing data {.small}
+## Finding Missing data 
 
 -   `is.na` - looks for `NAN` and `NA`
 -   `is.nan`- looks for `NAN`
@@ -85,10 +83,11 @@ is.nan(test)
 is.infinite(test)
 ```
 
-## Useful checking functions {.small}
+## Useful checking functions 
 
 -   `any` will be `TRUE` if ANY are true
-    -   `any(is.na(x))` - do we have any `NA`'s in `x`?
+    -   `any(is.na(x))` 
+    - do we have any `NA`'s in `x`?
 
 ```{r isna}
 A = c(1, 2, 4, NA)
@@ -97,7 +96,7 @@ any(is.na(A)) # are there any NAs - YES/TRUE
 any(is.na(B)) # are there any NAs- NO/FALSE
 ```
 
-## Fining `NA` values with `count()`{.codesmall}
+## Finding `NA` values with `count()`
 
 Check the values for your variables, are they what you expect?
 
@@ -109,10 +108,8 @@ Check the values for your variables, are they what you expect?
 Check if rare values make sense.
 
 ```{r, message=FALSE}
-bike <-jhur::read_bike()
-
-bike %>% count(subType)
-
+gapminder <- gapminder::gapminder
+gapminder %>% count(continent)
 ```
 
 <!-- ## Useful checking functions -->
@@ -237,16 +234,19 @@ a given data object.
 ```{r, error=FALSE}
 #install.packages("naniar")
 library(naniar)
-x = c(0, NA, 2, 3, 4, -0.5, 0.2)
-naniar::pct_complete(x)
-test
-naniar::pct_complete(test) # doesn't count infinite values as missing
+
+# monkeypox data 
+monkeypox <- read.csv("data/owid-monkeypox-data.csv")
+naniar::pct_complete(monkeypox)
+
+# mental health survey data 
+mental_health <- read.csv("data/mental_health_survey.csv")
+naniar::pct_complete(mental_health) # doesn't count infinite values as missing
 ```
 
 ## Air quality data
 
-The `airquality` dataset comes with R about air quality in New York in
-1973.
+The `airquality` dataset comes with R about air quality in New York in 1973.
 
 ```{r, message=FALSE}
 ?airquality # use this to find out more about the data
@@ -254,7 +254,7 @@ airqual <-tibble(airquality)
 airqual
 ```
 
-## naniar: `pct_complete()`{.small}
+## naniar: `pct_complete()`
 
 ```{R}
 pct_complete(airquality)
@@ -342,22 +342,23 @@ Be careful with missing data using subsetting:
 for sure if an `NA` value meets the condition. To keep them need to add
 `is.na()` conditional.
 
-## filter() and missing data {.codesmall}
+## filter() and missing data  
 
 ```{r, echo = FALSE}
-df <-tibble(Dog = c(0, NA, 2, 3, 1, 1), 
-            Cat= c(NA, 8, 6, NA, 2, NA))
+airqual %>% 
+  filter(Ozone > 30)
 ```
 
 ```{r}
-df
-df %>% filter(Dog < 3)
+airqual %>% 
+  filter(Ozone < 30)
 ```
 
 ## filter() and missing data 
 
 ```{r}
-df %>% filter(Dog < 3 | is.na(Dog))
+airqual %>% 
+  filter(Ozone < 30 | is.na(Ozone))
 ```
 
 ## To remove rows with `NA` values for a variable use `drop_na()`
@@ -365,7 +366,8 @@ df %>% filter(Dog < 3 | is.na(Dog))
 A function from the `tidyr` package.
 
 ```{r}
-df %>% drop_na(Dog)
+airqual %>% 
+  drop_na(Ozone)
 ```
 
 <!-- !NA` does not work as you might expect because you can't tell if something is not actually `NA` - R doesn't ever assume to know what the value of `NA` is  -->
@@ -383,46 +385,56 @@ df %>% drop_na(Dog)
 This function of the `tidyr` package drops rows with **any** missing data in **any** column when used on a df.
 
 ```{r}
-df %>% drop_na()
+airqual %>% 
+  drop_na()
 ```
 
-## Drop **columns** with any missing values{.codesmall}
+## Drop **columns** with any missing values 
 
 Use the `miss_var_which()` function from `naniar`
 
 ```{r}
-df<-df %>% mutate(test =c(1,2,3,4,5,6))
-df
-miss_var_which(df) # which columns have missing values
+miss_var_which(airqual) # which columns have missing values
 ```
 
-## Drop **columns** with any missing values{.codesmall}
-
+## Drop **columns** with any missing values
 
 ```{r}
-
-df %>% select(!miss_var_which(df))
-
+airqual %>% 
+  select(!miss_var_which(airqual))
 ```
 
-## Removing columns with threshold of percent missing row values{.codesmall}
+## Removing columns with threshold of percent missing row values
 
 ```{r}
-is.na(df) %>% head(n = 3)
-colMeans(is.na(df))#TRUE and FALSE treated like 0 and 1
-df %>% select(which(colMeans(is.na(df)) < 0.2))# remove if over 20% missing
+is.na(airqual) %>% 
+  head()
 ```
 
-## Change a value to be `NA`{.codesmall}
+```{r, eval=FALSE}
+colMeans(is.na(airqual)) #TRUE and FALSE treated like 0 and 1
+airqual %>% 
+  select(which(colMeans(is.na(df)) < 0.1))# remove if over 20% missing
+```
+
+
+
+
+## Change a value to be `NA` 
 
 The `na_if()` function of `dplyr` can be helpful for this. Let's say we
 think that all 0 values should be `NA`.
 
 ```{r}
-df %>% head(n = 3)
-
-df %>% mutate(Dog = na_if(Dog, 0))
+airqual %>% 
+  head(n = 3)
 ```
+
+```{r}
+airqual %>% 
+  mutate(Ozone = na_if(Ozone, 0))
+```
+
 
 ## Think about `NA`
 
@@ -444,7 +456,7 @@ week
 You might want to keep the `NA` values so that you know the original
 sample size.
 
-## Word of caution {.codesmall}
+## Word of caution  
 
 Calculating percentages will give you a different result depending on
 your choice to include NA values.
@@ -466,6 +478,7 @@ red_blue %>% mutate(percent =
 Should you be dividing by 9 or 6?   
 It depends on your data and what `NA` might mean.   
 Pay attention to your data and your `NA` values!
+
 <!-- ## Missing Data with Operations -->
 
 <!-- Similarly with logicals, operations/arithmetic with `NA` will result in `NA`s: -->
@@ -493,8 +506,8 @@ Pay attention to your data and your `NA` values!
 
 ## Lab Part 1
 
-🏠 [Class Website](https://jhudatascience.org/intro_to_r/)    
-💻[Lab](https://jhudatascience.org/intro_to_r/modules/Data_Cleaning/lab/Data_Cleaning_Lab.Rmd)
+🏠 [Class Website]()    
+💻[Lab]()
 
 <!-- ```{r readSal_csv, echo= FALSE, eval = TRUE} -->
 
@@ -539,32 +552,12 @@ Pay attention to your data and your `NA` values!
 ## Example of Recoding
 
 ```{r, echo=FALSE}
-data_diet <- tibble(Diet = rep(c("A", "B", "B"),
-                               times = 4), 
-                    Gender = c("Male", 
-                               "m",
-                               "Other",
-                               "F", 
-                               "Female",
-                               "M", 
-                               "f",
-                               "O", 
-                               "Man",
-                               "f",
-                               "F",
-                               "O"), 
-                    Weight_start = sample(100:250, size = 12),
-                    Weight_change = sample(-10:20, size = 12))
-
+data_diet <- read.csv("data/diet_data.csv")
+data_diet
 ```
 
 Say we have some data about samples in a diet study:
 
-```{r}
-data_diet
-```
-
-## Oh dear...
 
 This needs lots of recoding.
 
@@ -580,18 +573,16 @@ could be hectic!
 
 In `dplyr` you can use the `recode` function (need `mutate` here too!):
 
-::: codeexample
+
 ```{r, eval = FALSE}
 # General Format - this is not code!
 {data_input} %>%
   mutate({variable_to_fix} = {Variable_fixing}, {old_value} = {new_value},
                                        {another_old_value} = {new_value})
-
 ```
-:::
+
 
 ```{r, eval = FALSE}
-
 data_diet %>% 
   mutate(Gender = recode(Gender, M = "Male", 
                                  m = "Male", 
@@ -620,7 +611,6 @@ data_diet %>%
 
 The `case_when()` function of `dplyr` can help us to do this as well.
 
-::: codeexample
 ```{r, eval = FALSE}
 # General Format - this is not code!
 {data_input} %>%
@@ -628,7 +618,6 @@ The `case_when()` function of `dplyr` can help us to do this as well.
                                 /some condition/  ~ {value_for_con})
 
 ```
-:::
 
 Note that automatically values not reassigned explicitly by
 `case_when()` will be `NA` unless otherwise specified.
@@ -640,7 +629,7 @@ data_diet %>%
 
 
 ## Use of `case_when()` without automatic `NA`
-::: codeexample
+
 ```{r, eval = FALSE}
 # General Format - this is not code!
 {data_input} %>%
@@ -649,7 +638,7 @@ data_diet %>%
                          TRUE ~ {value_for_not_meeting_condition})
 
 ```
-:::
+
 
 Here we use the original values of `Gender` to replace all values of `Gender` that do not meet the condition `== "M"`.
 
@@ -670,7 +659,6 @@ data_diet %>%
     Gender %in% c("O", "Other") ~ "Other"))
 
 ```
-
 
 
 ## Another reason for `case_when()`
@@ -703,8 +691,6 @@ data_diet %>%
   geom_col(position = position_dodge()) +
   labs(y = "Individuals", 
        title = "Effect of diet A & B on participants")
-
-
 ```
 
 
@@ -739,15 +725,18 @@ within each element of a character vector (not data frame or tibble!).
 -   `str_replace` - replaces `pattern` with `replacement`
 
 
+
+
 ## `str_detect()`
 
 The `string` argument specifies what to check    
 The `pattern` argument specifies what to check for    
 
 ```{r}
-x<-c("cat", "dog", "mouse")
-str_detect(string = x, pattern = "d")
+x <- c("M", "male", "Man", "m", "Male", "F", "Female", "f", "female")
+str_detect(string = x, pattern = "m")
 ```
+
 
 ## `str_replace()`
 
@@ -755,9 +744,10 @@ The `string` argument specifies what to check
 The `pattern` argument specifies what to check for    
 The `replacement` argument specifies what to replace the pattern with    
 ```{r}
-x<-c("cat", "dog", "mouse")
-str_replace(string = x, pattern = "d", replacement = "D")
+x <- c("M", "male", "Man", "m", "Male", "F", "Female", "f", "female")
+str_replace(string = x, pattern = "F", replacement = "f")
 ```
+
 
 ## Subsetting part of a string
 
@@ -766,7 +756,7 @@ The `string` argument specifies what strings to work with     The `start` argume
 The `start` argument specifies position of where to end    
 
 ```{r}
-x<-c("cat", "dog", "mouse")
+x <- c("M", "male", "Man", "m", "Male", "F", "Female", "f", "female")
 str_sub(string = x, start = 1, end = 2)
 ```
 
@@ -955,8 +945,8 @@ head(df_united, 4)
 
 ## Lab Part 2
 
-🏠 [Class Website](https://jhudatascience.org/intro_to_r/)    
-💻[Lab](https://jhudatascience.org/intro_to_r/modules/Data_Cleaning/lab/Data_Cleaning_Lab.Rmd)
+🏠 [Class Website]()    
+💻[Lab]()
 
 # Extra Slides
 
@@ -1500,11 +1490,7 @@ rownames(check_Sal) = NULL
 all.equal(check_Sal, dplyr_sal)
 ```
 
-## Website
 
-[Website](../index.html)
-
-# Extra slides
 
 ## Creating Two-way Tables
 

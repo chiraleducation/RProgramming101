@@ -3637,14 +3637,14 @@
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#recap-on-summarization",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Recap on summarization",
-    "text": "Recap on summarization\n\nsummary(x): quantile information\nsummarize: creates a summary table of columns of interest\n\ncombine with across() to programmatically select columns\n\ncount(variable): how many of each unique value do you have\ngroup_by(): changes all subsequent functions\n\ncombine with summarize() to get statistics per group\n\nplot() and hist() are great for a quick snapshot of the data\n\n📃Cheatsheet"
+    "text": "Recap on summarization\n\nsummary(x): quantile information\nsummarize: creates a summary table of columns of interest\n\ncombine with across() to programmatically select columns\n\ncount(variable): how many of each unique value do you have\ngroup_by(): changes all subsequent functions\n\ncombine with summarize() to get statistics per group\n\nplot() and hist() are great for a quick snapshot of the data"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#recap-on-data-classes",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#recap-on-data-classes",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Recap on data classes",
-    "text": "Recap on data classes\n\ntibbles show column classes!\nas.CLASS_NAME(x) can be used to change the class of an object x\nLogic class objects only have TRUE or False (without quotes)\nThe repeat rep() and seq() functions help you create vectors with to and from arguments (and others)\nsample() makes random vectors. Can be used for integers or double depending on what it is sampling from.\nmatrix has columns and rows but is all one data class\nlists can contain multiples of any other class of data including lists!\nThe lubridate package is helpful for dates and times\n📃Cheatsheet"
+    "text": "Recap on data classes\n\ntibbles show column classes!\nas.CLASS_NAME(x) can be used to change the class of an object x\nLogic class objects only have TRUE or False (without quotes)\nThe repeat rep() and seq() functions help you create vectors with to and from arguments (and others)\nsample() makes random vectors. Can be used for integers or double depending on what it is sampling from.\nmatrix has columns and rows but is all one data class\nlists can contain multiples of any other class of data including lists!\nThe lubridate package is helpful for dates and times"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#data-cleaning",
@@ -3672,7 +3672,7 @@
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#useful-checking-functions",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Useful checking functions",
-    "text": "Useful checking functions\n\nany will be TRUE if ANY are true\n\nany(is.na(x)) - do we have any NA’s in x?\n\n\n\nA = c(1, 2, 4, NA)\nB = c(1, 2, 3, 4)\nany(is.na(A)) # are there any NAs - YES/TRUE\n\n[1] TRUE\n\nany(is.na(B)) # are there any NAs- NO/FALSE\n\n[1] FALSE"
+    "text": "Useful checking functions\n\nany will be TRUE if ANY are true\n\nany(is.na(x))\ndo we have any NA’s in x?\n\n\n\nA = c(1, 2, 4, NA)\nB = c(1, 2, 3, 4)\nany(is.na(A)) # are there any NAs - YES/TRUE\n\n[1] TRUE\n\nany(is.na(B)) # are there any NAs- NO/FALSE\n\n[1] FALSE"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#fining-na-values-with-count",
@@ -3686,7 +3686,7 @@
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#naniar",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "naniar",
-    "text": "naniar\nSometimes you need to look at lots of data though… the naniar package is a good option.\nThe pct_complete() function shows the percentage that is complete for a given data object.\n\n#install.packages(\"naniar\")\nlibrary(naniar)\n\nWarning: package 'naniar' was built under R version 4.2.2\n\nx = c(0, NA, 2, 3, 4, -0.5, 0.2)\nnaniar::pct_complete(x)\n\n[1] 85.71429\n\ntest\n\n[1]  NaN   NA -Inf\n\nnaniar::pct_complete(test) # doesn't count infinite values as missing\n\n[1] 33.33333"
+    "text": "naniar\nSometimes you need to look at lots of data though… the naniar package is a good option.\nThe pct_complete() function shows the percentage that is complete for a given data object.\n\n#install.packages(\"naniar\")\nlibrary(naniar)\n\nWarning: package 'naniar' was built under R version 4.2.2\n\n# monkeypox data \nmonkeypox <- read.csv(\"data/owid-monkeypox-data.csv\")\nnaniar::pct_complete(monkeypox)\n\n[1] 100\n\n# mental health survey data \nmental_health <- read.csv(\"data/mental_health_survey.csv\")\nnaniar::pct_complete(mental_health) # doesn't count infinite values as missing\n\n[1] 94.43415"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#air-quality-data",
@@ -3735,56 +3735,56 @@
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#filter-and-missing-data-1",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "filter() and missing data",
-    "text": "filter() and missing data\n\n\n\n\ndf\n\n# A tibble: 6 × 2\n    Dog   Cat\n  <dbl> <dbl>\n1     0    NA\n2    NA     8\n3     2     6\n4     3    NA\n5     1     2\n6     1    NA\n\ndf %>% filter(Dog < 3)\n\n# A tibble: 4 × 2\n    Dog   Cat\n  <dbl> <dbl>\n1     0    NA\n2     2     6\n3     1     2\n4     1    NA"
+    "text": "filter() and missing data\n\n\n# A tibble: 59 × 6\n   Ozone Solar.R  Wind  Temp Month   Day\n   <int>   <int> <dbl> <int> <int> <int>\n 1    41     190   7.4    67     5     1\n 2    36     118   8      72     5     2\n 3    34     307  12      66     5    17\n 4    32      92  12      61     5    24\n 5    45     252  14.9    81     5    29\n 6   115     223   5.7    79     5    30\n 7    37     279   7.4    76     5    31\n 8    71     291  13.8    90     6     9\n 9    39     323  11.5    87     6    10\n10    37     284  20.7    72     6    17\n# … with 49 more rows\n\n\n\nairqual %>% \n  filter(Ozone < 30)\n\n# A tibble: 55 × 6\n   Ozone Solar.R  Wind  Temp Month   Day\n   <int>   <int> <dbl> <int> <int> <int>\n 1    12     149  12.6    74     5     3\n 2    18     313  11.5    62     5     4\n 3    28      NA  14.9    66     5     6\n 4    23     299   8.6    65     5     7\n 5    19      99  13.8    59     5     8\n 6     8      19  20.1    61     5     9\n 7     7      NA   6.9    74     5    11\n 8    16     256   9.7    69     5    12\n 9    11     290   9.2    66     5    13\n10    14     274  10.9    68     5    14\n# … with 45 more rows"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#filter-and-missing-data-2",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#filter-and-missing-data-2",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "filter() and missing data",
-    "text": "filter() and missing data\n\ndf %>% filter(Dog < 3 | is.na(Dog))\n\n# A tibble: 5 × 2\n    Dog   Cat\n  <dbl> <dbl>\n1     0    NA\n2    NA     8\n3     2     6\n4     1     2\n5     1    NA"
+    "text": "filter() and missing data\n\nairqual %>% \n  filter(Ozone < 30 | is.na(Ozone))\n\n# A tibble: 92 × 6\n   Ozone Solar.R  Wind  Temp Month   Day\n   <int>   <int> <dbl> <int> <int> <int>\n 1    12     149  12.6    74     5     3\n 2    18     313  11.5    62     5     4\n 3    NA      NA  14.3    56     5     5\n 4    28      NA  14.9    66     5     6\n 5    23     299   8.6    65     5     7\n 6    19      99  13.8    59     5     8\n 7     8      19  20.1    61     5     9\n 8    NA     194   8.6    69     5    10\n 9     7      NA   6.9    74     5    11\n10    16     256   9.7    69     5    12\n# … with 82 more rows"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#to-remove-rows-with-na-values-for-a-variable-use-drop_na",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#to-remove-rows-with-na-values-for-a-variable-use-drop_na",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "To remove rows with NA values for a variable use drop_na()",
-    "text": "To remove rows with NA values for a variable use drop_na()\nA function from the tidyr package.\n\ndf %>% drop_na(Dog)\n\n# A tibble: 5 × 2\n    Dog   Cat\n  <dbl> <dbl>\n1     0    NA\n2     2     6\n3     3    NA\n4     1     2\n5     1    NA"
+    "text": "To remove rows with NA values for a variable use drop_na()\nA function from the tidyr package.\n\nairqual %>% \n  drop_na(Ozone)\n\n# A tibble: 116 × 6\n   Ozone Solar.R  Wind  Temp Month   Day\n   <int>   <int> <dbl> <int> <int> <int>\n 1    41     190   7.4    67     5     1\n 2    36     118   8      72     5     2\n 3    12     149  12.6    74     5     3\n 4    18     313  11.5    62     5     4\n 5    28      NA  14.9    66     5     6\n 6    23     299   8.6    65     5     7\n 7    19      99  13.8    59     5     8\n 8     8      19  20.1    61     5     9\n 9     7      NA   6.9    74     5    11\n10    16     256   9.7    69     5    12\n# … with 106 more rows"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#to-remove-rows-with-na-values-for-a-data-frame-use-drop_na",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#to-remove-rows-with-na-values-for-a-data-frame-use-drop_na",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "To remove rows with NA values for a data frame use drop_na()",
-    "text": "To remove rows with NA values for a data frame use drop_na()\nThis function of the tidyr package drops rows with any missing data in any column when used on a df.\n\ndf %>% drop_na()\n\n# A tibble: 2 × 2\n    Dog   Cat\n  <dbl> <dbl>\n1     2     6\n2     1     2"
+    "text": "To remove rows with NA values for a data frame use drop_na()\nThis function of the tidyr package drops rows with any missing data in any column when used on a df.\n\nairqual %>% \n  drop_na()\n\n# A tibble: 111 × 6\n   Ozone Solar.R  Wind  Temp Month   Day\n   <int>   <int> <dbl> <int> <int> <int>\n 1    41     190   7.4    67     5     1\n 2    36     118   8      72     5     2\n 3    12     149  12.6    74     5     3\n 4    18     313  11.5    62     5     4\n 5    23     299   8.6    65     5     7\n 6    19      99  13.8    59     5     8\n 7     8      19  20.1    61     5     9\n 8    16     256   9.7    69     5    12\n 9    11     290   9.2    66     5    13\n10    14     274  10.9    68     5    14\n# … with 101 more rows"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#drop-columns-with-any-missing-values",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#drop-columns-with-any-missing-values",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Drop columns with any missing values",
-    "text": "Drop columns with any missing values\nUse the miss_var_which() function from naniar\n\ndf<-df %>% mutate(test =c(1,2,3,4,5,6))\ndf\n\n# A tibble: 6 × 3\n    Dog   Cat  test\n  <dbl> <dbl> <dbl>\n1     0    NA     1\n2    NA     8     2\n3     2     6     3\n4     3    NA     4\n5     1     2     5\n6     1    NA     6\n\nmiss_var_which(df) # which columns have missing values\n\n[1] \"Dog\" \"Cat\""
+    "text": "Drop columns with any missing values\nUse the miss_var_which() function from naniar\n\nmiss_var_which(airqual) # which columns have missing values\n\n[1] \"Ozone\"   \"Solar.R\""
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#drop-columns-with-any-missing-values-1",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#drop-columns-with-any-missing-values-1",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Drop columns with any missing values",
-    "text": "Drop columns with any missing values\n\ndf %>% select(!miss_var_which(df))\n\n# A tibble: 6 × 1\n   test\n  <dbl>\n1     1\n2     2\n3     3\n4     4\n5     5\n6     6"
+    "text": "Drop columns with any missing values\n\nairqual %>% \n  select(!miss_var_which(airqual))\n\n# A tibble: 153 × 4\n    Wind  Temp Month   Day\n   <dbl> <int> <int> <int>\n 1   7.4    67     5     1\n 2   8      72     5     2\n 3  12.6    74     5     3\n 4  11.5    62     5     4\n 5  14.3    56     5     5\n 6  14.9    66     5     6\n 7   8.6    65     5     7\n 8  13.8    59     5     8\n 9  20.1    61     5     9\n10   8.6    69     5    10\n# … with 143 more rows"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#removing-columns-with-threshold-of-percent-missing-row-values",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#removing-columns-with-threshold-of-percent-missing-row-values",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Removing columns with threshold of percent missing row values",
-    "text": "Removing columns with threshold of percent missing row values\n\nis.na(df) %>% head(n = 3)\n\n       Dog   Cat  test\n[1,] FALSE  TRUE FALSE\n[2,]  TRUE FALSE FALSE\n[3,] FALSE FALSE FALSE\n\ncolMeans(is.na(df))#TRUE and FALSE treated like 0 and 1\n\n      Dog       Cat      test \n0.1666667 0.5000000 0.0000000 \n\ndf %>% select(which(colMeans(is.na(df)) < 0.2))# remove if over 20% missing\n\n# A tibble: 6 × 2\n    Dog  test\n  <dbl> <dbl>\n1     0     1\n2    NA     2\n3     2     3\n4     3     4\n5     1     5\n6     1     6"
+    "text": "Removing columns with threshold of percent missing row values\n\nis.na(airqual) %>% \n  head()\n\n     Ozone Solar.R  Wind  Temp Month   Day\n[1,] FALSE   FALSE FALSE FALSE FALSE FALSE\n[2,] FALSE   FALSE FALSE FALSE FALSE FALSE\n[3,] FALSE   FALSE FALSE FALSE FALSE FALSE\n[4,] FALSE   FALSE FALSE FALSE FALSE FALSE\n[5,]  TRUE    TRUE FALSE FALSE FALSE FALSE\n[6,] FALSE    TRUE FALSE FALSE FALSE FALSE\n\n\n\ncolMeans(is.na(airqual)) #TRUE and FALSE treated like 0 and 1\nairqual %>% \n  select(which(colMeans(is.na(df)) < 0.1))# remove if over 20% missing"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#change-a-value-to-be-na",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#change-a-value-to-be-na",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Change a value to be NA",
-    "text": "Change a value to be NA\nThe na_if() function of dplyr can be helpful for this. Let’s say we think that all 0 values should be NA.\n\ndf %>% head(n = 3)\n\n# A tibble: 3 × 3\n    Dog   Cat  test\n  <dbl> <dbl> <dbl>\n1     0    NA     1\n2    NA     8     2\n3     2     6     3\n\ndf %>% mutate(Dog = na_if(Dog, 0))\n\n# A tibble: 6 × 3\n    Dog   Cat  test\n  <dbl> <dbl> <dbl>\n1    NA    NA     1\n2    NA     8     2\n3     2     6     3\n4     3    NA     4\n5     1     2     5\n6     1    NA     6"
+    "text": "Change a value to be NA\nThe na_if() function of dplyr can be helpful for this. Let’s say we think that all 0 values should be NA.\n\nairqual %>% \n  head(n = 3)\n\n# A tibble: 3 × 6\n  Ozone Solar.R  Wind  Temp Month   Day\n  <int>   <int> <dbl> <int> <int> <int>\n1    41     190   7.4    67     5     1\n2    36     118   8      72     5     2\n3    12     149  12.6    74     5     3\n\n\n\nairqual %>% \n  mutate(Ozone = na_if(Ozone, 0))\n\n# A tibble: 153 × 6\n   Ozone Solar.R  Wind  Temp Month   Day\n   <int>   <int> <dbl> <int> <int> <int>\n 1    41     190   7.4    67     5     1\n 2    36     118   8      72     5     2\n 3    12     149  12.6    74     5     3\n 4    18     313  11.5    62     5     4\n 5    NA      NA  14.3    56     5     5\n 6    28      NA  14.9    66     5     6\n 7    23     299   8.6    65     5     7\n 8    19      99  13.8    59     5     8\n 9     8      19  20.1    61     5     9\n10    NA     194   8.6    69     5    10\n# … with 143 more rows"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#think-about-na",
@@ -3833,7 +3833,7 @@
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#example-of-recoding",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Example of Recoding",
-    "text": "Example of Recoding\n\n\n\nSay we have some data about samples in a diet study:\n\ndata_diet\n\n# A tibble: 12 × 4\n   Diet  Gender Weight_start Weight_change\n   <chr> <chr>         <int>         <int>\n 1 A     Male            199            -6\n 2 B     m               109            12\n 3 B     Other           142             8\n 4 A     F               163            -9\n 5 B     Female          117            -2\n 6 B     M               222            18\n 7 A     f               216            15\n 8 B     O               122             1\n 9 B     Man             138             0\n10 A     f               150             9\n11 B     F               136             4\n12 B     O               182            -5"
+    "text": "Example of Recoding\n\n\n   Diet Gender Weight_start Weight_change\n1     A   Male          182            -7\n2     B      m          121             6\n3     B  Other          117             9\n4     A      F          128             2\n5     B Female          242            16\n6     B      M          208            -9\n7     A      f          233            17\n8     B      O          111            10\n9     B    Man          219             5\n10    A      f          116            12\n11    B      F          163            15\n12    B      O          237            13\n\n\nSay we have some data about samples in a diet study:\nThis needs lots of recoding.\n\ndata_diet %>%\n  count(Gender)\n\n  Gender n\n1      f 2\n2      F 2\n3 Female 1\n4      m 1\n5      M 1\n6   Male 1\n7    Man 1\n8      O 2\n9  Other 1"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#oh-dear",
@@ -3847,42 +3847,42 @@
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#dplyr-can-help",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "dplyr can help!",
-    "text": "dplyr can help!\nUsing Excel to find all of the different ways gender has been coded, could be hectic!\nIn dplyr you can use the recode function (need mutate here too!):\n\n\n# General Format - this is not code!\n{data_input} %>%\n  mutate({variable_to_fix} = {Variable_fixing}, {old_value} = {new_value},\n                                       {another_old_value} = {new_value})\n\n\n\ndata_diet %>% \n  mutate(Gender = recode(Gender, M = \"Male\", \n                                 m = \"Male\", \n                               Man = \"Male\",\n                                 O = \"Other\",\n                                 f = \"Female\",\n                                 F = \"Female\")) %>%\n  count(Gender, Diet)"
+    "text": "dplyr can help!\nUsing Excel to find all of the different ways gender has been coded, could be hectic!\nIn dplyr you can use the recode function (need mutate here too!):\n\n# General Format - this is not code!\n{data_input} %>%\n  mutate({variable_to_fix} = {Variable_fixing}, {old_value} = {new_value},\n                                       {another_old_value} = {new_value})\n\n\ndata_diet %>% \n  mutate(Gender = recode(Gender, M = \"Male\", \n                                 m = \"Male\", \n                               Man = \"Male\",\n                                 O = \"Other\",\n                                 f = \"Female\",\n                                 F = \"Female\")) %>%\n  count(Gender, Diet)"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#recode",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#recode",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "recode()",
-    "text": "recode()\n\ndata_diet %>% \n  mutate(Gender = recode(Gender, M = \"Male\", \n                                 m = \"Male\", \n                               Man = \"Male\",\n                                 O = \"Other\",\n                                 f = \"Female\",\n                                 F = \"Female\")) %>%\n  count(Gender, Diet)\n\n# A tibble: 5 × 3\n  Gender Diet      n\n  <chr>  <chr> <int>\n1 Female A         3\n2 Female B         2\n3 Male   A         1\n4 Male   B         3\n5 Other  B         3"
+    "text": "recode()\n\ndata_diet %>% \n  mutate(Gender = recode(Gender, M = \"Male\", \n                                 m = \"Male\", \n                               Man = \"Male\",\n                                 O = \"Other\",\n                                 f = \"Female\",\n                                 F = \"Female\")) %>%\n  count(Gender, Diet)\n\n  Gender Diet n\n1 Female    A 3\n2 Female    B 2\n3   Male    A 1\n4   Male    B 3\n5  Other    B 3"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#or-you-can-use-case_when",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#or-you-can-use-case_when",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Or you can use case_when()",
-    "text": "Or you can use case_when()\nThe case_when() function of dplyr can help us to do this as well.\n\n\n# General Format - this is not code!\n{data_input} %>%\n  mutate({variable_to_fix} = case_when({Variable_fixing}   \n                                /some condition/  ~ {value_for_con})\n\n\nNote that automatically values not reassigned explicitly by case_when() will be NA unless otherwise specified.\n\ndata_diet %>% \n  mutate(Gender = case_when(Gender == \"M\" ~ \"Male\"))\n\n# A tibble: 12 × 4\n   Diet  Gender Weight_start Weight_change\n   <chr> <chr>         <int>         <int>\n 1 A     <NA>            199            -6\n 2 B     <NA>            109            12\n 3 B     <NA>            142             8\n 4 A     <NA>            163            -9\n 5 B     <NA>            117            -2\n 6 B     Male            222            18\n 7 A     <NA>            216            15\n 8 B     <NA>            122             1\n 9 B     <NA>            138             0\n10 A     <NA>            150             9\n11 B     <NA>            136             4\n12 B     <NA>            182            -5"
+    "text": "Or you can use case_when()\nThe case_when() function of dplyr can help us to do this as well.\n\n# General Format - this is not code!\n{data_input} %>%\n  mutate({variable_to_fix} = case_when({Variable_fixing}   \n                                /some condition/  ~ {value_for_con})\n\nNote that automatically values not reassigned explicitly by case_when() will be NA unless otherwise specified.\n\ndata_diet %>% \n  mutate(Gender = case_when(Gender == \"M\" ~ \"Male\"))\n\n   Diet Gender Weight_start Weight_change\n1     A   <NA>          182            -7\n2     B   <NA>          121             6\n3     B   <NA>          117             9\n4     A   <NA>          128             2\n5     B   <NA>          242            16\n6     B   Male          208            -9\n7     A   <NA>          233            17\n8     B   <NA>          111            10\n9     B   <NA>          219             5\n10    A   <NA>          116            12\n11    B   <NA>          163            15\n12    B   <NA>          237            13"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#use-of-case_when-without-automatic-na",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#use-of-case_when-without-automatic-na",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Use of case_when() without automatic NA",
-    "text": "Use of case_when() without automatic NA\n\n\n# General Format - this is not code!\n{data_input} %>%\n  mutate({variable_to_fix} = case_when({Variable_fixing}   \n             /some condition/ ~ {value_for_con},\n                         TRUE ~ {value_for_not_meeting_condition})\n\n\nHere we use the original values of Gender to replace all values of Gender that do not meet the condition == \"M\".\n\ndata_diet %>% \n  mutate(Gender = case_when(Gender == \"M\" ~ \"Male\",\n                                     TRUE ~ Gender))\n\n# A tibble: 12 × 4\n   Diet  Gender Weight_start Weight_change\n   <chr> <chr>         <int>         <int>\n 1 A     Male            199            -6\n 2 B     m               109            12\n 3 B     Other           142             8\n 4 A     F               163            -9\n 5 B     Female          117            -2\n 6 B     Male            222            18\n 7 A     f               216            15\n 8 B     O               122             1\n 9 B     Man             138             0\n10 A     f               150             9\n11 B     F               136             4\n12 B     O               182            -5"
+    "text": "Use of case_when() without automatic NA\n\n# General Format - this is not code!\n{data_input} %>%\n  mutate({variable_to_fix} = case_when({Variable_fixing}   \n             /some condition/ ~ {value_for_con},\n                         TRUE ~ {value_for_not_meeting_condition})\n\nHere we use the original values of Gender to replace all values of Gender that do not meet the condition == \"M\".\n\ndata_diet %>% \n  mutate(Gender = case_when(Gender == \"M\" ~ \"Male\",\n                                     TRUE ~ Gender))\n\n   Diet Gender Weight_start Weight_change\n1     A   Male          182            -7\n2     B      m          121             6\n3     B  Other          117             9\n4     A      F          128             2\n5     B Female          242            16\n6     B   Male          208            -9\n7     A      f          233            17\n8     B      O          111            10\n9     B    Man          219             5\n10    A      f          116            12\n11    B      F          163            15\n12    B      O          237            13"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#more-complicated-case_when",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#more-complicated-case_when",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "More complicated case_when()",
-    "text": "More complicated case_when()\n\ndata_diet %>% \n  mutate(Gender = case_when(\n    Gender %in% c(\"M\", \"male\", \"Man\", \"m\", \"Male\") ~ \"Male\",\n    Gender %in% c(\"F\", \"Female\", \"f\", \"female\")~ \"Female\",\n    Gender %in% c(\"O\", \"Other\") ~ \"Other\"))\n\n# A tibble: 12 × 4\n   Diet  Gender Weight_start Weight_change\n   <chr> <chr>         <int>         <int>\n 1 A     Male            199            -6\n 2 B     Male            109            12\n 3 B     Other           142             8\n 4 A     Female          163            -9\n 5 B     Female          117            -2\n 6 B     Male            222            18\n 7 A     Female          216            15\n 8 B     Other           122             1\n 9 B     Male            138             0\n10 A     Female          150             9\n11 B     Female          136             4\n12 B     Other           182            -5"
+    "text": "More complicated case_when()\n\ndata_diet %>% \n  mutate(Gender = case_when(\n    Gender %in% c(\"M\", \"male\", \"Man\", \"m\", \"Male\") ~ \"Male\",\n    Gender %in% c(\"F\", \"Female\", \"f\", \"female\")~ \"Female\",\n    Gender %in% c(\"O\", \"Other\") ~ \"Other\"))\n\n   Diet Gender Weight_start Weight_change\n1     A   Male          182            -7\n2     B   Male          121             6\n3     B  Other          117             9\n4     A Female          128             2\n5     B Female          242            16\n6     B   Male          208            -9\n7     A Female          233            17\n8     B  Other          111            10\n9     B   Male          219             5\n10    A Female          116            12\n11    B Female          163            15\n12    B  Other          237            13"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#another-reason-for-case_when",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#another-reason-for-case_when",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Another reason for case_when()",
-    "text": "Another reason for case_when()\ncase_when can do very sophisticated comparisons\n\ndata_diet <-data_diet %>% \n      mutate(Effect = case_when(Weight_change > 0 ~ \"Increase\",\n                                Weight_change == 0 ~ \"Same\",\n                                Weight_change < 0 ~ \"Decrease\"))\n\nhead(data_diet)\n\n# A tibble: 6 × 5\n  Diet  Gender Weight_start Weight_change Effect  \n  <chr> <chr>         <int>         <int> <chr>   \n1 A     Male            199            -6 Decrease\n2 B     m               109            12 Increase\n3 B     Other           142             8 Increase\n4 A     F               163            -9 Decrease\n5 B     Female          117            -2 Decrease\n6 B     M               222            18 Increase\n\n\n\n\n# A tibble: 5 × 3\n  Diet  Effect       n\n  <chr> <chr>    <int>\n1 A     Decrease     2\n2 A     Increase     2\n3 B     Decrease     2\n4 B     Increase     5\n5 B     Same         1"
+    "text": "Another reason for case_when()\ncase_when can do very sophisticated comparisons\n\ndata_diet <-data_diet %>% \n      mutate(Effect = case_when(Weight_change > 0 ~ \"Increase\",\n                                Weight_change == 0 ~ \"Same\",\n                                Weight_change < 0 ~ \"Decrease\"))\n\nhead(data_diet)\n\n  Diet Gender Weight_start Weight_change   Effect\n1    A   Male          182            -7 Decrease\n2    B      m          121             6 Increase\n3    B  Other          117             9 Increase\n4    A      F          128             2 Increase\n5    B Female          242            16 Increase\n6    B      M          208            -9 Decrease\n\n\n\n\n  Diet   Effect n\n1    A Decrease 1\n2    A Increase 3\n3    B Decrease 1\n4    B Increase 7"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#strings-in-r",
@@ -3910,56 +3910,56 @@
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#str_detect",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "str_detect()",
-    "text": "str_detect()\nThe string argument specifies what to check\nThe pattern argument specifies what to check for\n\nx<-c(\"cat\", \"dog\", \"mouse\")\nstr_detect(string = x, pattern = \"d\")\n\n[1] FALSE  TRUE FALSE"
+    "text": "str_detect()\nThe string argument specifies what to check\nThe pattern argument specifies what to check for\n\nx <- c(\"M\", \"male\", \"Man\", \"m\", \"Male\", \"F\", \"Female\", \"f\", \"female\")\nstr_detect(string = x, pattern = \"m\")\n\n[1] FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#str_replace",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#str_replace",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "str_replace()",
-    "text": "str_replace()\nThe string argument specifies what to check\nThe pattern argument specifies what to check for\nThe replacement argument specifies what to replace the pattern with\n\nx<-c(\"cat\", \"dog\", \"mouse\")\nstr_replace(string = x, pattern = \"d\", replacement = \"D\")\n\n[1] \"cat\"   \"Dog\"   \"mouse\""
+    "text": "str_replace()\nThe string argument specifies what to check\nThe pattern argument specifies what to check for\nThe replacement argument specifies what to replace the pattern with\n\nx <- c(\"M\", \"male\", \"Man\", \"m\", \"Male\", \"F\", \"Female\", \"f\", \"female\")\nstr_replace(string = x, pattern = \"F\", replacement = \"f\")\n\n[1] \"M\"      \"male\"   \"Man\"    \"m\"      \"Male\"   \"f\"      \"female\" \"f\"     \n[9] \"female\""
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#subsetting-part-of-a-string",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#subsetting-part-of-a-string",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Subsetting part of a string",
-    "text": "Subsetting part of a string\nstr_sub() allows you to subset part of a string\nThe string argument specifies what strings to work with The start argument specifies position of where to start\nThe start argument specifies position of where to end\n\nx<-c(\"cat\", \"dog\", \"mouse\")\nstr_sub(string = x, start = 1, end = 2)\n\n[1] \"ca\" \"do\" \"mo\""
+    "text": "Subsetting part of a string\nstr_sub() allows you to subset part of a string\nThe string argument specifies what strings to work with The start argument specifies position of where to start\nThe start argument specifies position of where to end\n\nx <- c(\"M\", \"male\", \"Man\", \"m\", \"Male\", \"F\", \"Female\", \"f\", \"female\")\nstr_sub(string = x, start = 1, end = 2)\n\n[1] \"M\"  \"ma\" \"Ma\" \"m\"  \"Ma\" \"F\"  \"Fe\" \"f\"  \"fe\""
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#filter-and-stringr-functions",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#filter-and-stringr-functions",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "filter and stringr functions",
-    "text": "filter and stringr functions\n\nhead(data_diet,n = 4)\n\n# A tibble: 4 × 5\n  Diet  Gender Weight_start Weight_change Effect  \n  <chr> <chr>         <int>         <int> <chr>   \n1 A     Male            199            -6 Decrease\n2 B     m               109            12 Increase\n3 B     Other           142             8 Increase\n4 A     F               163            -9 Decrease\n\ndata_diet %>% \n  filter(str_detect(string = Gender,\n                    pattern = \"M\"))\n\n# A tibble: 3 × 5\n  Diet  Gender Weight_start Weight_change Effect  \n  <chr> <chr>         <int>         <int> <chr>   \n1 A     Male            199            -6 Decrease\n2 B     M               222            18 Increase\n3 B     Man             138             0 Same"
+    "text": "filter and stringr functions\n\nhead(data_diet,n = 4)\n\n  Diet Gender Weight_start Weight_change   Effect\n1    A   Male          182            -7 Decrease\n2    B      m          121             6 Increase\n3    B  Other          117             9 Increase\n4    A      F          128             2 Increase\n\ndata_diet %>% \n  filter(str_detect(string = Gender,\n                    pattern = \"M\"))\n\n  Diet Gender Weight_start Weight_change   Effect\n1    A   Male          182            -7 Decrease\n2    B      M          208            -9 Decrease\n3    B    Man          219             5 Increase"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#case_when-improved-with-stringr",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#case_when-improved-with-stringr",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "case_when() improved with stringr",
-    "text": "case_when() improved with stringr\n\ncount(data_diet, Gender)\n\n# A tibble: 9 × 2\n  Gender     n\n  <chr>  <int>\n1 f          2\n2 F          2\n3 Female     1\n4 m          1\n5 M          1\n6 Male       1\n7 Man        1\n8 O          2\n9 Other      1\n\n\n\ndata_diet %>% \n  mutate(Gender = case_when(\n    Gender %in% c(\"M\", \"male\", \"Man\", \"m\", \"Male\") ~ \"Male\",\n    Gender %in% c(\"F\", \"Female\", \"f\", \"female\")~ \"Female\",\n    Gender %in% c(\"O\", \"Other\") ~ \"Other\"))"
+    "text": "case_when() improved with stringr\n\ncount(data_diet, Gender)\n\n  Gender n\n1      f 2\n2      F 2\n3 Female 1\n4      m 1\n5      M 1\n6   Male 1\n7    Man 1\n8      O 2\n9  Other 1\n\n\n\ndata_diet %>% \n  mutate(Gender = case_when(\n    Gender %in% c(\"M\", \"male\", \"Man\", \"m\", \"Male\") ~ \"Male\",\n    Gender %in% c(\"F\", \"Female\", \"f\", \"female\")~ \"Female\",\n    Gender %in% c(\"O\", \"Other\") ~ \"Other\"))"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#case_when-improved-with-stringr-1",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#case_when-improved-with-stringr-1",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "case_when() improved with stringr",
-    "text": "case_when() improved with stringr\n^ indicates the beginning of a character string $ indicates the end\n\ndata_diet %>% \n  mutate(Gender = case_when(\n    str_detect(string = Gender, pattern = \"^m|^M\") ~ \"Male\",\n    str_detect(string = Gender, pattern = \"^f|^F\") ~ \"Female\",\n    str_detect(string = Gender, pattern = \"^o|^O\") ~ \"Other\")) %>%\n  count(Gender)\n\n# A tibble: 3 × 2\n  Gender     n\n  <chr>  <int>\n1 Female     5\n2 Male       4\n3 Other      3"
+    "text": "case_when() improved with stringr\n^ indicates the beginning of a character string $ indicates the end\n\ndata_diet %>% \n  mutate(Gender = case_when(\n    str_detect(string = Gender, pattern = \"^m|^M\") ~ \"Male\",\n    str_detect(string = Gender, pattern = \"^f|^F\") ~ \"Female\",\n    str_detect(string = Gender, pattern = \"^o|^O\") ~ \"Other\")) %>%\n  count(Gender)\n\n  Gender n\n1 Female 5\n2   Male 4\n3  Other 3"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#what-if-our-data-looked-like-this",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#what-if-our-data-looked-like-this",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "What if our data looked like this?",
-    "text": "What if our data looked like this?\n\n\n\n\ndiet_comb\n\n# A tibble: 5 × 2\n  change         n\n  <chr>      <int>\n1 A_Decrease     2\n2 A_Increase     2\n3 B_Decrease     2\n4 B_Increase     5\n5 B_Same         1"
+    "text": "What if our data looked like this?\n\n\n\n\ndiet_comb\n\n      change n\n1 A_Decrease 1\n2 A_Increase 3\n3 B_Decrease 1\n4 B_Increase 7"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#separating-columns-based-on-a-separator",
     "href": "modules/10_Data_Cleaning/Data_Cleaning.html#separating-columns-based-on-a-separator",
     "title": "Data Manipulation with R- Data Cleaning",
     "section": "Separating columns based on a separator",
-    "text": "Separating columns based on a separator\nThe separate() function from tidyr can split a column into multiple columns.\nThe col argument specifies what column to work with\nThe into argument specifies names of new columns\nThe sep argument specifies what to separate by\n\ndiet_comb %>% \n  separate(col = change, into = c(\"Diet\", \"Change\"), sep = \"_\" )\n\n# A tibble: 5 × 3\n  Diet  Change       n\n  <chr> <chr>    <int>\n1 A     Decrease     2\n2 A     Increase     2\n3 B     Decrease     2\n4 B     Increase     5\n5 B     Same         1"
+    "text": "Separating columns based on a separator\nThe separate() function from tidyr can split a column into multiple columns.\nThe col argument specifies what column to work with\nThe into argument specifies names of new columns\nThe sep argument specifies what to separate by\n\ndiet_comb %>% \n  separate(col = change, into = c(\"Diet\", \"Change\"), sep = \"_\" )\n\n  Diet   Change n\n1    A Decrease 1\n2    A Increase 3\n3    B Decrease 1\n4    B Increase 7"
   },
   {
     "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#uniting-columns",
@@ -4856,5 +4856,12 @@
     "title": "Descriptive Statistics",
     "section": "Adding correlation value to a plot",
     "text": "Adding correlation value to a plot\nNote that you can add the correlation value to a plot, via the annotate().\n\ncor_val <- cor(x, y, use = \"complete.obs\")\ncor_val_label <- paste0(\"r = \", round(cor_val, 3))\n\ncirc %>%\n  ggplot(aes(x = orangeAverage, y = purpleAverage)) +\n  geom_point(size = 0.3) +\n  annotate(\"text\", x = 2000, y = 7500, label = cor_val_label, size = 5)"
+  },
+  {
+    "objectID": "modules/10_Data_Cleaning/Data_Cleaning.html#finding-na-values-with-count",
+    "href": "modules/10_Data_Cleaning/Data_Cleaning.html#finding-na-values-with-count",
+    "title": "Data Manipulation with R- Data Cleaning",
+    "section": "Finding NA values with count()",
+    "text": "Finding NA values with count()\nCheck the values for your variables, are they what you expect?\ncount() is a great option because it gives you:\n\nThe unique values\nThe amount of these values\n\nCheck if rare values make sense.\n\ngapminder <- gapminder::gapminder\ngapminder %>% count(continent)\n\n# A tibble: 5 × 2\n  continent     n\n  <fct>     <int>\n1 Africa      624\n2 Americas    300\n3 Asia        396\n4 Europe      360\n5 Oceania      24"
   }
 ]

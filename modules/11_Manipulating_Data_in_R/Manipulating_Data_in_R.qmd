@@ -58,22 +58,36 @@ knitr::include_graphics("images/tidyr_pivoting.gif")
 ```
 
 ## What is wide/long data?
+The pivot_longer() function from the tidyr package in R can be used to pivot a data frame from a wide format to a long format.
 
-Data is stored *differently* in the tibble.
+This function uses the following basic syntax:
+
+
+```{r, eval=FALSE}
+df %>% pivot_longer(cols=c('var1', 'var2', ...),
+                    names_to='col1_name',
+                    values_to='col2_name') 
+```
+
+- cols: The names of the columns to pivot
+- names_to: The name for the new character column
+- values_to: The name for the new values column
+
 
 ```{r, echo = FALSE}
-ex_wide <- tibble(State = "Alabama",
-                 June_vacc_rate = "37.2%",
-                 May_vacc_rate = "36.0%",
-                 April_vacc_rate = "32.4%"
-                     )
-ex_long <- pivot_longer(ex_wide, cols = !State)
+data.wide <- readr::read_csv("data/GDP_by_Country.csv", show_col_types = FALSE)
 ```
 
 Wide: has many columns
 
 ```{r, echo = FALSE}
-ex_wide
+head(data.wide)
+```
+
+We can use the pivot_longer() function to pivot this data frame into a long format:
+```{r, echo = FALSE}
+# Use pivot_longer() in R
+ex_long <- pivot_longer(cols=2:5, names_to = "year", values_to = "GDP")
 ```
 
 Long: column names become data
@@ -107,9 +121,7 @@ ex_long
 
 ## What is wide/long data?
 
-<div style="font-size:40pt">
-Data is wide or long **with respect** to certain variables.
-</div>
+
 
 ```{r, fig.alt="Wide versus long data rearanges the position of column names and row content.", out.width = "60%", echo = FALSE, fig.align='center'}
 knitr::include_graphics("images/pivot.jpg")
@@ -149,7 +161,8 @@ You might see old functions `gather` and `spread` when googling. These are the o
 
 - First describe which columns we want to "pivot_longer"
 
-<div class = "codeexample">
+
+
 ```{r, eval=FALSE}
 {long_data} <- {wide_data} %>% pivot_longer(cols = {columns to pivot})
 ```
@@ -169,7 +182,7 @@ long_data <- wide_data %>% pivot_longer(cols = everything())
 long_data
 ```
 
-## Reshaping data from **wide to long** {.codesmall} 
+## Reshaping data from **wide to long** 
 
 `pivot_longer()` - puts column data into rows (`tidyr` package)
 
@@ -177,13 +190,11 @@ long_data
 - `names_to =` gives a new name to the pivoted columns
 - `values_to =` gives a new name to the values that used to be in those columns
 
-<div class = "codeexample">
 ```{r, eval=FALSE}
 {long_data} <- {wide_data} %>% pivot_longer(cols = {columns to pivot},
                                         names_to = {New column name: contains old column names},
                                         values_to = {New column name: contains cell values})
 ```
-</div>
 
 ## Reshaping data from **wide to long**
 
@@ -267,13 +278,12 @@ long
 - `names_from =` the old column whose contents will be spread into multiple new column names.
 - `values_from =` the old column whose contents will fill in the values of those new columns.
 
-<div class = "codeexample">
 ```{r, eval=FALSE}
 {wide_data} <- {long_data} %>% 
   pivot_wider(names_from = {Old column name: contains new column names},
               values_from = {Old column name: contains new cell values})
 ```
-</div>
+
 
 ## Reshaping data from **long to wide**
 
@@ -309,9 +319,9 @@ wide
 
 ## Lab Part 1
 
-🏠 [Class Website](https://jhudatascience.org/intro_to_r/)
+🏠 [Class Website]()
 
-💻 [Lab](https://jhudatascience.org/intro_to_r/modules/Manipulating_Data_in_R/lab/Manipulating_Data_in_R_Lab.Rmd)
+💻 [Lab]()
 
 ## Joining in `dplyr`
 

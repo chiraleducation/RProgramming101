@@ -156,15 +156,6 @@ Before an answer to above question, let us see some of the problems and their so
 
 -   **R for Data Science:** Online version of the book by Hadley Wickham, who has written many of the best packages for R, including the Tidyverse, which we will cover. 
 
-## Course Structure and meetings
-
-- This course is structured as a 6 week experience.
-- This is an 1/2 online and 1/2 face-to-face course.
-- Each week is marked as an F2F or online week.
-- In person classes will take place on Tuesdays from 10:30am-11:50am
-- The online “lessons” allow you to work at your own pace through the assigned lessons that includes a video lecture, tutorial, demonstration, exercise and assignment. 
-
-
 
 ## Textbook 
 
